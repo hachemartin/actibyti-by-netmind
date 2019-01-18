@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .contenedor {
+        background-color: cyan;
+        width: 600px;
+        height: 400px;
+        margin: auto;
+        position: relative;
+    }
+    .caja1 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+
+    }
+    h1 {
+        z-index: 1;
+        position: relative; /*Elemento no estático que sale a primer plano*/
+    }
+    </style>
+</head>
+<body>
+    
+<div class="contenedor">
+    <h1>POSITION</h1>
+    <div class="caja1">TEXTO</div>
+</div>
+
+</body>
+</html>
