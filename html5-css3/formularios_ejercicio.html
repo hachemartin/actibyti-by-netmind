@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+    <style>
+    .contenedor {
+        background-color: darkcyan;
+        width: 600px;
+        margin: auto;
+        padding: 15px;
+    }
+    label {
+        width: 100px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    input[required] {
+        border: 2px solid blue;
+    }
+    input:invalid {
+        background-color: red;
+        color: white;
+    }
+    textarea {
+        background-color: burlywood;
+        color: whitesmoke;
+    }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+    <form action="#" method="GET">
+        <label for="">Nombre</label>
+        <input type="text" name="name" placeholder="Nombre" maxlength="10"><br>
+        <label for="">Apellidos</label>
+        <input type="text" name="surname" placeholder="Apellidos">
+        <br>
+        <label for="">Edad</label>
+        <input type="number" name="age" min="18" max="99" placeholder="Edad">
+        <br>
+        <label for="">Teléfono</label>
+        <input type="tel" name="telefono" pattern="^[0-9]{9}$" placeholder="Teléfono">
+        <br>
+        <label for="correo">Correo</label>
+        <input type="email" name="email" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        <br>
+        <label for="">Comentario</label>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        <label for="">Ciudad</label>
+        <select name="ciudad" id="">
+            <option disabled selected>Ciudad</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Tarragona">Tarragona</option>
+            <option value="Lleida">Lleida</option>
+            <option value="Girona">Girona</option>
+        </select>
+        <br>
+        <label for="">Preferencias combo</label>
+        <select size=3 multiple>
+            <option selected value="1">Mañana</option>
+            <option value="2">Tarde</option>
+            <option value="3">Noche</option>
+        </select>
+        <br>
+        <label for="">OPT Group</label>
+        <select>
+            <option selected disabled value="00">Seleccione provincia:</option>
+                <optgroup label='1.- Andalucia'>
+                <option value="04">Almeria</option>
+                <option value="18">Granada</option>
+                <option value="41">Sevilla</option>
+            </optgroup>
+            <optgroup label='2.- Comunitat Valenciana'>
+                <option value="46">Valencia</option>
+                <option value="12">Castelló</option>
+            </optgroup>
+        </select>
+        <br>
+        <label for="">Datalist</label>
+        <input list='provincias'>
+            <datalist id='provincias'>
+                <option>Barcelona</option>
+                <option>Girona</option>
+                <option>Tarragona</option>
+                <option>Lleida</option>
+            </datalist>   
+        <br>
+        <label for="">Publicidad</label>
+        <input type="radio" id="si" value="si" name="publicidad" checked><span for="si">Sí</span>
+        <input type="radio" id="no" value="no" name="publicidad"><span for="no">No</span>
+        <br>
+        <label for="">Newsletter</label><input type="checkbox" value="Newsletter"><span>Recibir newsletter</span>
+        <br>
+        <input type="submit" name="Enviar" value="Enviar">
+    </form>
+</div>
+
+</body>
+</html>
