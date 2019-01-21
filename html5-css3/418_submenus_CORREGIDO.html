@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>submenu</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		a {
+			text-decoration: none; /*eliminar subrayado enlaces*/
+			font-family: arial; /*tipo de letra*/
+
+			/*enlaces con forma de botón*/
+			width: 120px;
+			height: 30px;
+			display: inline-block;
+			background-color: lightgrey;
+			line-height: 30px; /*centrado vertical*/
+			text-align: center; /*centrado horizontal*/
+
+			border: 1px solid blue;
+		}
+
+		a:hover {
+			color:red;
+		}
+
+		ul {
+			list-style: none; /*eliminar viñetas de los elementos de la lista*/
+		}
+
+		li {
+			display: inline-block; /*elementos de la lista unos al lado de otros*/
+			vertical-align: top;
+		}
+
+		/*estilos especiales para el primer y el último botón*/
+		li:first-child a {
+			border-radius: 15px 0px 0px 15px;
+		}
+		li:last-child a {
+			border-radius: 0px 15px 15px 0px;
+		}
+
+		/*las opciones del submenu deben aparecer en posición vertical*/
+		.submenu li {
+			display: block;
+		}
+
+		/* suprimir el margen interior de la lista que contiene el submenu*/
+		.submenu ul {
+			padding: 0px;
+			/*display: none;*/
+
+			/*inicialmente el submenu no se verá*/
+			height: 0px;
+			overflow: hidden;
+			transition: 1s;
+
+			/*para evitar que cuando aparezca el submenu desplaze la caja que se encuentra debajo del nav*/
+			position: absolute;
+		}
+
+		.submenu:hover ul {
+			/*display: block;*/
+			height: 100px;
+		}
+
+		.submenu ul a {
+			border-radius: 15px;
+		}
+		section {
+			height: 300px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">Inicio</a></li>
+			<li class='submenu'><a href="#">Contacto</a>
+				<ul>
+					<li><a href="#">html</a></li>
+					<li><a href="#">php</a></li>
+					<li><a href="#">javascript</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Quienes somos</a></li>
+			<li class='submenu'><a href="#">Servicios</a>
+				<ul>
+					<li><a href="#">html</a></li>
+					<li><a href="#">php</a></li>
+					<li><a href="#">javascript</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<section></section>
+</body>
+</html>
