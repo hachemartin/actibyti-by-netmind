@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // Definimos variable, array vacío
+        var listaCompra = [];
+
+        // bucle for hasta 10
+        for (var i = 0; i < 5; i++) { 
+            var articulo = prompt('Introduce artículo '+(i+1));
+            
+            var indice = listaCompra.indexOf(articulo);
+
+            if(indice == -1) {
+                listaCompra.push(articulo);
+            } else if (indice == "") {
+                alert('Inválido');
+                i--
+            } else {
+                alert('el artículo ya existe');
+                i--
+            }
+        }
+        document.write('Lista de la compra: ' + listaCompra.join(', ')+'<br>');       // imprimimos array
+
+
+        
+/*
+        alert(indice);
+        if (indice >= 0){
+        dias.splice(indice, 1);
+        }
+
+        for (i in dias) {
+            document.write(i+'-->'+dias[i]+'<br>')
+        } */
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

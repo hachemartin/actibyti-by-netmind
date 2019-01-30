@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        var dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+
+        var indice = dias.indexOf('miercoles');
+
+        alert(indice);
+
+        // borrar elemento, pero indicamos que sólo borre 1 elemento
+        // lo metemos en un if, porque podría borrar el último elemento de la array
+        if (indice >= 0){
+        dias.splice(indice, 1);
+        }
+
+        for (i in dias) {
+            document.write(i+'-->'+dias[i]+'<br>')
+        }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
