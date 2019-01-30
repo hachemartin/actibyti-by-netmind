@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript</title>
+
+    <script>
+        var texto = 'Hola Mundo';
+
+        document.write('<h1 class="float">texto</h1>'); // texto con etiqueta html
+        document.write('<br>'); // salto de línea
+        document.write('<h1>'+texto+'</h1>'); // etiqueta html con variable
+        document.write('<br>');
+        document.write('<h1>\'texto\'</h1>'); // muestra las comillas ''
+        document.write('<br>');
+        document.write('<br>');
+        // variable numérica
+
+        var i = '3'; // si 'i' es numérica, suma. Si no lo es, concatena
+        var j = 4;
+
+        document.write(i+j);
+        document.write('<br>');
+        document.write('i'+'j');
+        document.write('<br>');
+
+        var suma = i+j; //  resultado: 34
+
+        // convertir variable de texto a numérica
+
+        suma = parseInt(suma); // estamos sobreescribiendo el valor
+
+        document.write(suma+9); //resultado 349
+
+        var k = 5;
+
+        document.write('<br>');
+        document.write(i,j,k);
+        document.write('<br>');
+
+
+        // más ejemplos
+
+        var num1=3;
+        var num2=4;
+        var num3='8';
+        document.write(num1+num2+num3);
+        document.write('<br>');
+
+        document.write("Suma: ", num1+num2); // la coma ',' resuelve el resultado de la suma posterior
+        document.write('<br>');
+        document.write("Suma: "+ num1+num2); // en este caso + no lo suma, lo concatena
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
