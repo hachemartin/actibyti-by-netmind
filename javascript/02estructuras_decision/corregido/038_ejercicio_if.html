@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//solicitar la nota de un examen
+		var nota = parseInt(prompt('Nota?'));
+
+		//evaluar la nota con if
+
+		if (isNaN(nota)) {
+			//validar si la variable nota no es numérica
+			document.write('nota no numérica');
+		} else if (nota < 0 || nota > 10) {
+			document.write('nota no válida');
+		} else if (nota == 10) {
+			document.write('matrícula');
+		} else if (nota > 5) {
+			document.write('aprobado');
+		} else if (nota == 5) {
+			document.write('por los pelos');
+		} else {
+			document.write('suspenso');
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
