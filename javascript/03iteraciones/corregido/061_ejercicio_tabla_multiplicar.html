@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		do {
+	 		//pedir número al usuario
+	 		var numero = parseInt(prompt('número'));
+
+	 		//validar número dentro de rango
+	 		if (numero < 1 || numero > 10) {
+	 			alert('número fuera de rango');
+	 		} else {
+		 		//bucle de 10 iteraciones
+		 		for (i=1; i<=10; i++) {
+		 			//calcular la multiplicación
+		 			var m = numero*i;
+		 			//imprimir la tabla
+		 			document.write(numero + ' x ' + i + ' = ' + m + '<br>')
+		 		}
+		 	}
+		 	
+		 	//preguntar si se calcula otra tabla
+		 	seguirJugando = confirm('otra tabla?');
+
+		 } while (seguirJugando==true)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
