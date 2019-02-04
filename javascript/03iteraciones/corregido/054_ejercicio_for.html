@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//solicitar número al usuario
+		var num = parseInt(prompt('número?'));
+
+		//bucle entre 1 y el numero del usuario
+		for (i=0; i<=num; i++) {
+			//validar si es divisible entre 3 y 5
+			if (i%3 == 0 && i%5 == 0) {
+				document.write('FizzBuzz<br>');
+			//validar si es divisible entre 3 
+			} else if (i%3 == 0) {
+				document.write('Fizz<br>');
+			//validar si es divisible entre 5
+			} else if (i%5 == 0){
+				document.write('Buzz<br>');
+			} else {
+				document.write(i+'<br>');
+			}
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
