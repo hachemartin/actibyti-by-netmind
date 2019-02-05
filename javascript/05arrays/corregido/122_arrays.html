@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//array escalar
+
+		var dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
+
+		for (i in dias) {
+			document.write(i + '-->'+dias[i]);
+			document.write('<br>')
+		}
+
+		//array asociativo
+		var datosPersona=new Array();
+
+		datosPersona['nombre'] = 'Luis Rodriguez'
+		datosPersona['nif'] = '44444444P'
+		datosPersona['direccion'] = 'c/ Pepe Gotera s/n'
+		datosPersona['poblacion'] = 'Barcelona'
+
+		for (i in datosPersona) {
+			document.write(i + '-->'+datosPersona[i]);
+			document.write('<br>')
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
