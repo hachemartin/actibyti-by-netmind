@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // declaramos las variables como peticiones de valor
+        var number1 = parseInt(prompt('¿Número 1?'));
+        var number2 = parseInt(prompt('¿Número 2?'));
+
+        // ejecutamos la función con (VARIABLE, VARIABLE)
+        var resultado = sumar(number1, number2); // siempre que la función tenga parámetro de entrada, tendremos que recogerlo
+        // hay que declarar función de resultado para guardar dentro el valor de la función
+        
+        // las variales que se definen dentro de una función son Variables Locales, y sólo se ven dentro de las funciones
+        alert(resultado);
+        
+        // el navegador lee primero las funciones y después lee el resto del código
+        // el nombre de los (PARÁMETROS DE ENTRADA) no condiciona a las variables que usemos
+        function sumar(n1, n2) {
+            // si no definéramos la variable con Var, la función se podría ver fuera de la función
+            var suma = n1 + n2;
+
+            // devuelve el valor de la variable suma fuera de la función
+            return suma;
+            // alert(suma);
+        }
+    
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
