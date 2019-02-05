@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//crear array vacio
+		var arrayNum = new Array();
+
+		//bucle for que se ejecutará 10 veces
+		for (i=0; i<10; i++) {
+			//calcular número aleatorio
+			numero = Math.floor(Math.random() * 100)+1
+			//guardar número en el array
+			arrayNum.push(numero);
+		}
+
+		//document.write(arrayNum)
+
+		//OPCION 1: SORT
+
+		//ordenar el array numéricamente
+
+		arrayNum.sort(function(a,b) {return a-b});
+
+		document.write(arrayNum);
+
+		document.write('<br>');
+
+		document.write('menor: '+arrayNum[0]+' mayor: '+arrayNum[9]);
+
+		document.write('<br>');
+
+		//OPCION 2: usando variables
+
+		var menor = 101
+		var mayor = 0
+
+		//recorrer el array elemento a elemento
+		for (i in arrayNum) {
+			//determinar el mayor número guardado
+			if (arrayNum[i] > mayor) {
+				mayor = arrayNum[i]
+			}
+
+			//determinar el menor número guardado
+			if (arrayNum[i] < menor) {
+				menor = arrayNum[i]
+			}
+		}
+
+		//visualizar en pantalla el mayor y el menor número
+		document.write('menor: '+menor+' mayor: '+mayor);
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
