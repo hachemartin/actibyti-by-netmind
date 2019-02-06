@@ -1,0 +1,162 @@
+* {
+    font-family: Arial;
+}
+body {
+    background-color: grey;
+    margin: 0px;
+}
+header {
+    height: 600px;
+    background-image: url('../img/punta_cana_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center; /* centrarlo verticalmente */
+    justify-content: center; /*centrarlo horizontalmente */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    position: relative;
+
+}
+header nav {
+    height: 80px;
+    background-color: #0044ff;
+    position: absolute; /* Siempre que usemos posicionamiento absolute, la caja contenedora ha de tener un posicionamiento relativo */
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0.5;
+    text-align: center;
+    
+}
+header nav a {             /* Etiquetas A ya tienen por defecto display inline-block */
+    color: white;
+    width: 300px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 80px;  /* Centrar vertical el texto del enlace */
+
+
+}
+header nav a:hover {
+    background-color: red;
+}
+.contenedor {
+    max-width: 1600px;
+    background-color: aqua;
+    margin: auto;
+    
+}
+h1 {
+    color: white;
+}
+ul li {
+    display: inline-block;
+    font-size: 30px;
+}
+nav ul {
+    margin: 0px;
+}
+#section1 {
+    background-color: blueviolet;
+    overflow: hidden;
+}
+#section2 {
+    background-color: darkcyan;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* si pongo un padding, box-sizing para evitar que la caja crezca */
+
+}#section3 {
+    background-color: seagreen;
+    text-align: center;
+}
+
+#section1 img {
+    float: left;
+    padding: 15px;
+    margin-right: 20px;
+}
+article img {
+    width: 100%; /* respecto a la imagen contenedora */
+}
+#section2 span {
+    text-align: justify;
+}
+#section3 {
+    padding: 15px;
+    
+}
+h2 {
+    text-transform: uppercase;
+}
+p {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.clear {
+    clear: both;
+}
+article {
+    border: 1px solid red;
+    width: 30%; /* 400px pero también se puede hacer porcentaje para que no colapse */
+    min-width: 250px; /* Ordenamos que a un tamaño inferior a 250px, colapsará */
+    display: inline-block;
+    vertical-align: top; /* Alienadas verticalmente por arriba */
+    text-align: justify;
+    font-size: 12px;
+    margin: 10px;
+}
+.formulario {
+    border: 1px solid aqua;
+    width: 600px;
+    height: 450px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.mapa {
+    border: 1px solid aqua;
+    width: 600px;
+    height: 450px;
+    display: inline-block;
+    vertical-align: top;
+}
+textarea {
+    width: 350px;
+    height: 200px;
+}
+#section3 h2 {
+    text-align: center;
+}
+label {
+    width: 150px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+}
+.input1 {
+    width: 350px;
+}
+/* También se puede hacer al revés. Que aplique a todo excepto a submit
+input:not([type='submit']); */
+.botonenviar {
+    text-align: right;
+}
+footer {
+    background-color: blue;
+    position: relative;
+    padding: 10px;
+}
+footer nav {
+    background-color: #0044ff;
+    position: absolute; /* Siempre que usemos posicionamiento absolute, la caja contenedora ha de tener un posicionamiento relativo */
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0.5;
+    text-align: center;
+}
