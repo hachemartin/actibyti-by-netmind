@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		dias = ["lunes", "martes", "miercoles", "jueves"]
+
+		//buscar un elemento
+		var indice = dias.indexOf('miercoles')
+
+		//borrar elemento
+		if (indice >= 0) {
+			dias.splice(indice, 1);
+		}
+
+		for (i in dias) {
+			document.write(i+'-->'+dias[i]+'<br>')
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
