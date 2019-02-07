@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//solicitar al usuario que informe dos valores
+		var valor1 = parseInt(prompt('valor 1'));
+		var valor2 = parseInt(prompt('valor 2'));
+
+		//llamar a la función para sumarlos y recoger el valor en la variable resultado
+		var resultado = sumar(valor1, valor2);
+
+		alert(resultado)
+
+		function sumar(n1, n2) {
+			var suma = n1 + n2;
+
+			//devolver al valor de la variable suma fuera de la función
+			return suma;
+
+			//alert(suma)
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
