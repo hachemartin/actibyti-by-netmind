@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		div.script {
+			display: block;
+			color: black;
+			width: 700px;
+			padding: 25px;
+			margin: 5px auto auto auto;
+			box-sizing: border-box;	
+			text-align: left;
+			border: 2px solid black;
+			border-radius: 25px;
+		}
+		label {
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		textarea {
+			height: 100px;
+		}
+		#resumen {
+			width: 600px;
+		}
+	</style>
+	<script>
+		//definir la función para tratamiento del formulario
+		function enviaFormulario() {
+			//recuperar nombre del cliente 
+			var nombre = document.getElementById('nombre').value;
+			//recuperar material de la combo
+			var material = document.getElementById('material').value;
+			//recuperar dimensión del radio seleccionado
+			var radio = document.formulario.dimension;
+
+			for (i in radio) {
+				if (radio[i].checked) {
+					var dimension = radio[i].value;
+				}
+			}
+			//recuperar comentario del textarea
+			var comentarios = document.getElementById('comentarios').value;
+
+			//calcular precio en función de material y dmensión
+
+			//precio según el material
+			switch (material) {
+				case 'Plástico':
+					var precio = 5;
+					break;
+				case 'Madera':
+					var precio = 10;
+					break;
+				case 'Aluminio':
+					var precio = 20;
+					break;
+				case 'Acero':
+					var precio = 25;
+					break;
+				case 'Platino':
+					var precio = 200;
+					break;
+			}
+
+			//añadir suplemento en función de la dimensión
+			if (dimension=='Mediana') {
+				precio = precio + 20
+			} else if (dimension=='Grande') {
+				precio = precio + 50
+			}
+
+			//confeccionar el mensaje de respuesta
+			var mensaje = nombre + ' ha pedido una caja de '+material+' de dimensión '+dimension+'. El precio es de '+precio+'€ ('+comentarios+')';
+
+			//enviar el mensaje al input de resumen
+			document.getElementById('resumen').value = mensaje
+
+		}
+
+
+	</script>
+</head>
+<body>
+	<div class="script">
+		<form name="formulario">
+			<label>Nombre del cliente:</label><input type="text" id="nombre"></br></br>
+			<label>Material de la caja:</label>
+			<select id="material">
+				<option>Plástico</option>
+				<option>Aluminio</option>
+				<option>Madera</otpion>
+				<option>Acero</option>
+				<option>Platino</option>
+			</select></br></br>
+			<label>Dimensiones de la caja:</label>
+			Pequeña<input type="radio" name="dimension" value="Pequeña" checked>
+			Mediana<input type="radio" name="dimension"value="Mediana">
+			Grande<input type="radio" name="dimension" value="Grande"></br></br>
+			<label>Comentarios</label><textarea id="comentarios"></textarea></br></br>
+			<input type="button" value="Enviar" onclick="enviaFormulario()">
+		</form><br>
+		<input disabled type='text' id='resumen'>
+	</div>
+</body>
+</html> 
