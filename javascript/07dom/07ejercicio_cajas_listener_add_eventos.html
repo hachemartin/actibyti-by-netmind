@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+    <script type="text/javascript">
+        // esperar a que se cargue la página antes de activar el script
+        window.onload = function () {
+            // activamos un 'escuchador', con elemento a detectar y función que queremos que se ejecute
+            document.getElementById("caja1").addEventListener("click", alerta);
+            document.getElementById("caja2").addEventListener("dblclick", alerta)
+            document.getElementById("caja3").addEventListener("mouseover", alerta);
+            
+        }
+
+        function alerta() {
+            alert('Se ha ejecutado el evento');
+            
+        }
+
+        // esta función determina qué tecla ha pulsado el usuario
+        function verTecla(tecla) {
+            keyCode=tecla.which;
+            alert(keyCode)
+        }
+    </script>
+
+</head>
+
+<!-- detecta qué tecla se ha pulsado-->
+<body onkeypress="verTecla(event)">
+    <div id="contenedor" style="text-align: center">
+    <div id="caja1" style="background-color:yellow; width:150px; height:150px; display: inline-block">Click</div>
+    
+    <div id="caja2" style="background-color:yellow; width:150px; height:150px; display: inline-block"">Dblclick</div>
+    <div id="caja3" style="background-color:yellow; width:150px; height:150px; display: inline-block">Mouseover</div>
+</div>
+</body>
+
+</html>
