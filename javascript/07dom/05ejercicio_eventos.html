@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" oncontextmenu="return false"> <!--deshabilita el botón derecho del ratón-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+    <script type="text/javascript">
+
+        
+        
+/*        function salir1(){
+            var texto = document.getElementById('texto').value;
+            alert(texto);
+        }
+        
+        function salir2(){
+            var opcion = document.getElementById('combo').value;
+            alert(opcion);
+        }
+
+        function salir3(){
+            var enviar = document.getElementById('enviar').value;
+            alert(enviar);
+        } */
+
+        // todas las funciones anteriores son iguales, sólo cambia el valor. Podemos simplificarlo todo en una función
+        function salir(valor){
+            alert(valor);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <input type="text" name="texto" id="texto" placeholder="texto" onblur="salir(this.value)">
+        <br>
+        <br>
+        <select id="combo" onchange="salir(this.value)">
+            <!-- desactivamos la opción, pero la ponemos como primera opción -->
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="Enviar" id="enviar" ondblclick="salir(this.value)">
+
+    </form>
+</body>
+
+</html>
