@@ -1,0 +1,65 @@
+<!doctype html>
+ <html>
+   <head>
+      <meta charset="utf-8"/>      
+      <title>Nave espacial</title>       
+      <style type="text/css">
+         body{
+            background-color:cyan;
+            overflow-x:hidden;
+         }
+         #nave{
+            position:absolute;
+            bottom:32px;
+            left:400px;
+         }
+        
+      </style>
+
+      <script type="text/javascript">
+
+         //posición inicial de la nave y listener del teclado
+         window.onload=function() {
+            x = document.getElementById('nave').offsetLeft;
+            y = document.getElementById('nave').offsetTop;
+
+            //alert(x+' '+y)
+
+            // activar listener para detectar la pulsación de una tecla en todo el documento
+            document.addEventListener('keydown', moverNave)
+         };
+
+         
+         //función para mover la nave
+         function moverNave(event){
+            // alert('Se está ejecutando la función')
+            //averiguar la tecla pulsada con event.which
+            switch (event.which){
+                case 37:
+                    x = x -10;
+                    break;
+                case 38:
+                    y = y - 10;
+                    break;
+                case 39:
+                    x = x + 10;
+                    break;
+                case 40:
+                    y = y + 10;
+            }
+            //calcular la nueva posición de la nave
+            
+            //mostrar la nave en su nueva posición
+            document.getElementById('nave').style.left=x+"px";
+            document.getElementById('nave').style.top=y+"px";     
+         }
+         
+      </script>
+   </head>
+
+   <body>
+      <div id="nave">
+         <img src="img/nave.png" height="100">
+      </div>
+   </body>
+ </html>
