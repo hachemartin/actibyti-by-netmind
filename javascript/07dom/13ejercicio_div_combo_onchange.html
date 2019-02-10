@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #contenedor {
+        border: 1px solid black;
+        border-radius: 25px;
+        height: 500px;
+    }
+
+    #contenido {
+        background-color: red;
+        height: 400px;
+        margin: 30px;
+    }
+
+    select option[value="blue"] {
+        background-color: blue;
+    }
+    select option[value="yellow"] {
+        background-color: yellow;
+    }
+    select option[value="red"] {
+        background-color: red;
+    }
+    select option[value="green"] {
+        background-color: green;
+    }
+    #combo {
+        margin-left: 30px;
+
+    }
+
+    
+    </style>
+
+    <script>
+        window.onload= function(){
+            document.getElementById("combo").addEventListener("change", cambiaColor);
+        }
+        function cambiaColor(){
+            var color = document.getElementById('combo').value;
+            document.getElementById('contenido').style.backgroundColor = color;
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    <div id="contenedor">
+        <div id="contenido"></div>
+        <select name="combo" id="combo">
+            <option disabled selected>Escoja un color</option>
+            <option value="yellow">Amarillo</option>
+            <option value="red">Rojo</option>
+            <option value="green">verde</option>
+            <option value="blue">Azul</option>
+
+        </select>
+    </div>
+</body>
+</html>
