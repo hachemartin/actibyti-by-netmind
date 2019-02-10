@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      #contenedor {
+        text-align: center;
+      }
+
+      img {
+        width: 600px;
+        height: 300px;
+      }
+    </style>
+
+    <script>
+      // creamos array con el nombre de las imágenes disponibles de la galería
+      var imagenes = new Array(
+        "img/punta_cana_1.jpg",
+        "img/punta_cana_2.jpg",
+        "img/punta_cana_3.jpg",
+        "img/punta_cana_4.jpg",
+        "img/punta_cana_5.jpg",
+        "img/punta_cana_6.jpg"
+      );
+
+        // variable que indica qué posición del array se muestra por defecto
+      var imagen = 0;
+      var last = imagenes.length - 1
+      
+
+      // activar los listeners de los dos botones (prev y next) para asociar eventos
+
+        window.onload=function(){
+            document.getElementById('prev').
+                addEventListener('click', prev);
+            document.getElementById('next').addEventListener('click', next);
+        }
+
+      // definir las funciones asociadas a los dos eventos (botones)
+        function prev(){
+
+            if (imagen==0){
+                imagen = last;
+            } else {
+                imagen--;
+                
+            }
+            document.getElementById('imagen').src = imagenes[imagen];
+        }
+
+        function next(){
+            // incrementar la posición del array
+
+            if (imagen==last){
+                imagen = 0;
+            } else {
+                imagen++;
+            }
+            document.getElementById('imagen').src = imagenes[imagen];
+
+        }
+
+    </script>
+  </head>
+  <body>
+    <div id="contenedor">
+      <p>Click en la imagen para cambiar</p>
+      <img
+        id="imagen"
+        src="img/punta_cana_1.jpg"
+        onclick="cambiarImagen()"
+      /><br />
+      <input type="button" id="prev" value="<<" />
+      <input type="button" id="next" value=">>" />
+    </div>
+  </body>
+</html>
