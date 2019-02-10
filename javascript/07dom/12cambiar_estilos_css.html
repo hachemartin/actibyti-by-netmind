@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script>
+      function cambiaColor() {
+        document.getElementById("capa").style.background = "yellow";
+        document.getElementById("capa").style.textAlign="left";
+        document.getElementById("capa").style.border="3px solid blue";
+
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      id="capa"
+      style="background-color:blue; width:200px; height:50px; text-align:center"
+    >
+      <input type="button" value="Apreta aquí" onclick="cambiaColor()" />
+    </div>
+  </body>
+</html>
