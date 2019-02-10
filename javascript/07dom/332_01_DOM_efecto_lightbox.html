@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		div.wraper {
+			display: block;
+			width: 900px;
+			margin: auto;
+			text-align: center;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		#black_overlay{
+			display: none;
+			position: absolute; 
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%; 
+			background-color: black;
+			z-index:1001;
+			background-color:rgba(0,0,0,0.7);
+		}
+		#lightbox{
+			display: none;
+			position: absolute; 
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			padding: 16px;
+			border: 16px solid orange;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+		}
+	</style>
+	<script>
+		function ligthboxOpen() {
+			document.getElementById("black_overlay").style.display="block";
+			document.getElementById("lightbox").style.display="block";
+		}
+		function ligthboxClose() {
+			document.getElementById("black_overlay").style.display="none";
+			document.getElementById("lightbox").style.display="none";
+		}
+	</script>
+</head>
+<body>
+	<div class="wraper">
+		<button onclick="ligthboxOpen()">Pulsar</button>
+		<div id="black_overlay">
+			<div id="lightbox">
+				Ventana ligthbox.<br><a href="#" onclick="ligthboxClose()">Cerrar</a><br><br>
+				Este contenido solo se muestra al pulsar sobre el botón
+			</div>
+		</div>
+	</div>
+</body>
+</html> 
