@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	
+	<script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<script type="text/javascript">
+
+		$(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+		function inicio() {
+			//activar listener
+			$('#anadir').on('click', addElement);
+			$('#borrar').on('click', removeElement);
+		}
+
+        var listaCompra = [];
+
+		// función añadir elemento
+		function addElement(){
+			// recuperar el dato del formulario
+			var elemento = $('#elemento').val();
+            // comprobar si el dato existe en el array
+            var indice = listaCompra.indexOf(elemento);
+                if(indice == -1) {
+                    listaCompra.push(elemento);
+                    // si no existe, añadir el dato recuperado a la lista
+                    $('#lista').append('<li>'+elemento+'</li>');
+
+                    // ejecutamos un listener que se aplica a etiquetas <li> después de ser creadas
+                    // borrar - activar (sólo pasa cuando aplicamos sobre elementos que no existen al cargarse la página)
+                    $('li').off('click');
+                    $('li').on('click', ver);
+
+                    // borrar el contenido del input
+                    $('#elemento').val('');
+                    // situar el cursor dentro del input
+                    $('#elemento').focus();
+
+                } else if (indice == "") {
+                    alert('Inválido');
+                    
+                } else {
+                    alert('el artículo ya existe');
+                    return;
+                }
+
+
+		}
+
+		// función borrar lista
+		function removeElement(){
+			$('#lista').empty();
+
+            // borrar el array
+            listaCompra = [];
+		}
+
+        function ver(){
+            var opcion = $(this).text();
+            alert(opcion);
+            
+        }
+		
+	</script>
+</head>
+<body>
+	<input type='text' id='elemento'>
+	<input type='button' id='anadir' value='Añadir elemento'>
+	<input type='button' id='borrar' value='Borrar lista'><br><br>
+	<ul id='lista'></ul>
+</body>
+</html>
