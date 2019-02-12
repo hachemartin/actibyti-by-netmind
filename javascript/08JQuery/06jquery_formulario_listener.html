@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+            $(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+            function inicio() {
+                //activar listener
+                $('input[type=button]').on('click', saludar);
+            }
+
+            function saludar(){
+            //JS: var nombre = document.getElementById('campoNombre').value
+
+            // recuperar valor de formulario
+            var nombre = $('.campoNombre').val();
+
+            // escribir valor en otro campo
+            $('.campoNombre2').val(nombre);
+
+            // desactivar el evento
+            $('input[type=button]').off('click');
+            }
+    </script>
+
+</head>
+<body>
+    
+        <form>
+                <label>Escribe tu nombre: </label>
+                <input type="text" class="campoNombre">
+                <input type="button" value="Enviar formulario">
+                <input type="text" class="campoNombre2">
+
+        </form> 
+
+</body>
+</html>
