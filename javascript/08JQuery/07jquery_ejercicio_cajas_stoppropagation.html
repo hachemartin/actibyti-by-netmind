@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    #verde {
+        width: 400px;
+        height: 400px;
+        background-color: green;
+        box-sizing: border-box;
+        padding: 100px;
+        margin: auto;
+    }
+
+    #azul {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
+
+    </style>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+        function inicio() {
+            //activar listener
+            $('#verde').on('click', clickVerde);
+            $('#azul').on('click', clickAzul);
+
+        }
+
+        function clickVerde(){
+            alert('clic en verde');
+        }
+
+        function clickAzul(event){
+            // evitar que se propague a las cajas contenedoras
+            event.stopPropagation();
+            alert('clic en Azul');
+        }
+
+
+
+    </script>
+</head>
+<body>
+        <div id="verde">
+                <div id="azul"></div>
+        </div>
+</body>
+</html>
