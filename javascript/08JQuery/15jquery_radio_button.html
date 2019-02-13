@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+    $(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+    function inicio() {
+    //activar listener
+    $("input[type='button']").on('click', verChecks);
+
+    }
+
+
+    function verRadio(){
+        var radio = $('input[type=radio]:checked').val();
+        alert(radio);
+    }
+    
+    function verChecks(){
+        valores = $("input[type=checkbox]:checked");
+            valores.each(function() {
+            alert($(this).val());
+            });
+
+
+    }
+
+    
+
+    
+    </script>
+</head>
+<body>
+    
+        <input type="checkbox" name="check" value="check1">
+        <input type="checkbox" name="check" value="check2">
+        <input type="checkbox" name="check" value="check3">
+        <input type="button" value="Ver">
+
+</body>
+</html>
