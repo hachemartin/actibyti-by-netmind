@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	
+	<script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<script type="text/javascript">
+
+		$(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+		function inicio() {
+			//activar listener
+			$('#anadir').on('click', addElement);
+			$('#borrar').on('click', removeElement);
+		}
+
+		// función añadir elemento
+		function addElement(){
+			// recuperar el dato del formulario
+			var elemento = $('#elemento').val();
+			// añadir el dato recuperado a la lista
+			$('#lista').append('<li>'+elemento+'</li>');
+			// borrar el contenido del input
+			$('#elemento').val('');
+			// situar el cursor dentro del input
+			$('#elemento').focus();
+		}
+
+		// función borrar lista
+		function removeElement(){
+			$('#lista').empty();
+		}
+		
+	</script>
+</head>
+<body>
+	<input type='text' id='elemento'>
+	<input type='button' id='anadir' value='Añadir elemento'>
+	<input type='button' id='borrar' value='Borrar lista'><br><br>
+	<ul id='lista'></ul>
+</body>
+</html>
