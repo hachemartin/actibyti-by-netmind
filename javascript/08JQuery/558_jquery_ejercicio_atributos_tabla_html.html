@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<style type="text/css">
+		table, td {
+			border: 1px solid black
+		}
+	</style>
+	<script>
+		$(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+		function inicio() {
+			//activar listener
+			$('tr').on('click', colorear);
+		}
+
+		// función para colorear las celdas de la fila sobre la que hemos hecho click
+		function colorear() {
+			// restablece el color de todos los 'tr'
+			$('tr').css('background-color', 'white');
+			// colorea el seleccionado
+			$(this).css('background-color', 'blue');
+		}
+
+		
+		
+	</script>
+</head>
+<body>
+	<div class="script">
+		<table>
+			<tr><td>111111111</td><td>111111111</td><td>111111111</td><td>111111111</td></tr>
+			<tr><td>222222222</td><td>222222222</td><td>222222222</td><td>222222222</td></tr>
+			<tr><td>333333333</td><td>333333333</td><td>333333333</td><td>333333333</td></tr>
+			<tr><td>444444444</td><td>444444444</td><td>444444444</td><td>444444444</td></tr>
+		</table>
+	</div>
+</body>
+</html> 
