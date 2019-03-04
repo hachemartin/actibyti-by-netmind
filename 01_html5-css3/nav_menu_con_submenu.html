@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .contenedor {
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color:darkblue;
+            border: ridge darkblue 2px;
+            display: inline-block;
+            width:120px;
+            height: 30px;
+            line-height:30px;
+            text-align:center;
+            transition: 2s;
+
+        }
+        a:hover {
+            color: white;
+            background-color: #3425ff;
+            border: ridge #4e4bff 2px;
+            transition: 0.3s;
+
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            vertical-align: top;
+        }
+        li:first-child a {      
+            border-radius: 15px 0px 0px 15px;
+        }
+        li:last-child a {
+            border-radius: 0px 15px 15px 0px;
+        }
+        .submenu li {
+            display: block;
+        }
+        .submenu ul {
+            padding: 0px;
+ /*           display: none;  para usarlo con display block   */
+            height: 0px;
+            overflow: hidden;
+            transition: 1.5s;
+            position: absolute; /* Evita que la caja desplace a otras */
+        }
+        .submenu:hover ul {
+            height: 115px;
+ /*           display: block;  con block no podríamos utilizar transition */
+            transition: 1s;
+        }
+        .submenu ul a {
+            border-radius: 0px;
+            font-size: 12px;
+            background: 
+        }
+        .borderredondo {
+            border-radius: 15px;
+        }
+        .bordercero {
+            border-radius: 0;
+        }
+        section {
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a> </li>
+                    <li><a href="#">About</a> </li>
+                    <li class="submenu"><a href="#">Work</a>
+                        <ul>
+                            <li><a href="#">Branding</a></li>
+                            <li><a href="#">Developer</a></li>
+                            <li><a href="#">javascript</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu"><a href="#">Contact</a>
+                        <ul>
+                                <li><a class="borderredondo" href="#">Branding</a></li>
+                                <li><a href="#">Developer</a></li>
+                                <li><a href="#">javascript</a></li>
+                            </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <section>
+
+            </section>
+        </header>
+    </div>
+</body>
+</html>
