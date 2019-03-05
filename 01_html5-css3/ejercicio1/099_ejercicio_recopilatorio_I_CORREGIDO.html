@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejericio recopilatorio</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		/*fuente arial*/
+		* {font-family: arial;}
+
+		div.contenedor { /*aplica a la etiqueta <div> que tenga el atributo class contenedor*/
+			width: 600px; /*ancho caja contenedora*/
+			margin: auto; /*centrar caja contenedora*/
+		}
+		nav, section {
+			border: 1px solid black; /*borde de cajas*/
+			padding: 10px; /*margen interior*/
+		}
+		/*enlaces*/
+		nav a {
+			text-decoration: none; /*texto sin subrayar*/
+			border: 1px solid blue; /*borde de los botones*/
+			width: 100px; /*ancho de los botones*/
+			height: 30px; /*alto de los botones*/
+			display: inline-block; /*convertir enlaces en cajas y que se situen unas al lado de otras*/
+			background-color: grey; /*color de fondo*/
+			text-align: center; /*texto centrado horizontalmente*/
+			line-height: 30px; /*texto centrado verticalmente*/
+			transition: 1s; /*cuando el raton sale se restablece el color gris del fondo en 1s*/
+		}
+
+		/*centrar los botones dentro de la caja <nav>*/
+		nav {text-align: center;}
+
+		/*cambiar el color de fondo cuando el ratón pasa por encima de la etiqueta a que se encuentra dentro del nav*/
+		nav a:hover {
+			background-color: yellow; /*cambia el color de fondo del botón a amarillo*/
+			transition: 1s; /*cuando el raton entra se cambia el color gris del fondo a amarillo en 1s*/
+		}
+
+		/*centrar el texto del título*/
+		h1 {
+			text-align: center; 
+		}
+
+		#seccion1 {
+			overflow: hidden; /*forzar a la caja contenedora para que se dimensione considerando los elementos con float*/
+			text-align: justify; /*texto justificado dentro de la sección*/
+		}
+
+		#seccion1 img {
+			width: 50%; /*la imagen de la seccion 1 debe tener el 50% ancho de la caja contenedora*/
+			float:left; /*el parrfo de texto se situa a la derecha de la imagen*/
+			margin-right: 15px; /*margen derecho para separar el texto de la imagen*/
+			margin-bottom: 15px; /*margen inferior para separar el texto de la imagen*/
+		}
+
+		.clear {
+			clear:both; /*romper el float*/
+		}
+
+		#seccion2 {
+			background-image: url('img/099_fondo.jpg'); /*utilizar una imagen como fondo de la seccion*/
+			background-size: cover; /*escalar la imagen de fondo para que ocupe todo el tamaño de la caja*/
+			text-align: center; /*centrar el contenido de toda la seccion*/
+		}
+
+		ul {
+			list-style-image: url('img/gorro_cocina.png'); /*utilizar una imagen como viñeta en una lista*/
+			/*estas dos propiedades son para centrar la lista*/
+			display: table;
+			margin: auto;
+			text-align: left; /*dentro de la lista el texto aparece alineado a lña izquierda*/
+		}
+
+		ol li {
+			list-style: decimal; /*restablecer la numeracion decimal para los elementos de la lista que se encuentra dentro de la etiqueta <ol>*/
+			font-size: 12px; /*tamaño de letra solo para los elementos de la sublista*/
+		}
+
+		/*estilos genéricos de formato de texto*/
+		.colorAzul {
+			color: blue; /*color del texto*/
+		}
+
+		.colorRojo {
+			color: red; /*color del texto*/
+		}
+
+		.alto30 {
+			line-height: 30px; /*alto de linea*/
+		}
+
+		.negrita {
+			font-weight: bold; /*texto en negrita*/
+		}
+
+		.cursiva {
+			font-style: italic; /*texto en cursiva*/
+		}
+
+		code {
+			font-family: none; /*restablecer el tipo de letra para la etiqueta code*/
+		}
+
+		td, th {
+			border: 2px solid blue; /*borde de lsa celdas de la tabla*/
+			width: 50px; /*ancho de la celda*/
+			height: 30px; /*alto de la celda*/
+			padding: 5px; /*margen interior*/
+		}
+
+		table {
+			margin: auto; /*centrar la tabla*/
+		}
+	</style>
+</head>
+<body>
+	<div class='contenedor'>
+		<nav>
+			<a href="#seccion1">Sección 1</a>
+			<a href="#seccion2">Sección 2</a>
+			<a href="#seccion3">Sección 3</a>
+			<a href="#seccion4">Sección 4</a>
+		</nav>
+		<section id='seccion1'>
+			<h1>IMAGEN Y TEXTO ALREDEDOR</h1>
+			<img src="img/img1.jpg" alt='pueblito en el mar'>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.</p>
+			<p class='clear'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat.</p>
+		</section>
+		<section id='seccion2'>
+			<h1>LISTAS Y FONDOS</h1>
+			<ul>
+				<li>Elemento 1
+					<ol>
+						<li>Subelemento 1.1</li>
+						<li>Subelemento 1.1</li>
+						<li>Subelemento 1.1</li>
+					</ol>
+				</li>
+				<li>Elemento 2
+					<ol>
+						<li>Subelemento 2.1</li>
+						<li>Subelemento 2.1</li>
+						<li>Subelemento 2.1</li>
+					</ol>
+				</li>
+			</ul>
+		</section>
+		<section id='seccion3'>
+			<h1>TEXTO CON ESTILOS</h1>
+			<p class='colorAzul alto30'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.<span class='colorRojo'>Ut enim ad minim veniam,</span>
+			</p>
+			<p><span class='negrita'>Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et <span class="cursiva">dolore magna</span> aliqua.Ut enim ad minim veniam.
+			</p>
+			<p>Fórmula: a=I<sup>2</sup><br>Fórmula química: CO<sub>2</sub></p>
+			<p><del>Texto tachado</del> y texto que <ins>acabamos de añadir</ins></p>
+			<p>Ejemplo de código: <code>for(f=1; f<10; f++)</code></p>
+		</section>
+		<section id='seccion4'>
+			<h1>TABLAS Y ENLACE EXTERNO</h1>
+			<table>
+				<caption><a href="http://www.google.es" target='_blank'>Ir a google</a></caption>
+				<tr>
+					<th>Col 1</th>
+					<th>Col 2</th>
+					<th>Col 3</th>
+				</tr>
+				<tr>
+					<td colspan="2">1.1</td>
+					<td rowspan="3">1.2</td>
+				</tr>
+				<tr>
+					<td>2.1</td>
+					<td>2.2</td>
+				</tr>
+				<tr>
+					<td>3.1</td>
+					<td>3.2</td>
+				</tr>
+			</table>
+		</section>
+	</div>
+</body>
+</html>
