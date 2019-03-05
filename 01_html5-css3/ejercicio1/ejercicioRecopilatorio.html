@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio recopilatorio I</title>
+    <style>
+        * {font-family: arial;}
+        div.contenedor { /*El atributo clase 'contenedor' que se encuentra dentro de la etiqueta DIV*/
+            width: 600px; /*Ancho de caja contenedora*/
+            margin: auto; /*Centrar caja contenedora*/
+            border: 0.5px solid teal;
+        }
+        nav, section {
+            border: 1px dotted blue;
+            padding: 10px;
+            }
+        nav a{ /*Las etiquetas A que se encuentren dentro de la etiqueta NAV*/
+            text-decoration: none; /*Enlace sin subrayar*/
+            border: 1px solid turquoise;
+            width: 100px;
+            height: 30px;
+            display: inline-block; /*Para visualizar las medidas anteriores, se ha de cambiar tipo de display en block*/
+            background-color: beige;
+         /* text-align: center; no es necesario porque lo hereda de NAV*/
+            line-height: 30px; /*Centrar verticalmente*/
+            transition: 2s; /*Transición de salida*/
+
+        }
+        nav {
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: darkblue;
+            color: blanchedalmond;
+            border: 1px solid #09011f;
+            transition: 0.7s; /*Transición de entrada*/
+            width: 110px;
+            height: 40px;
+            line-height: 40px; /*Centrar verticalmente*/
+
+        }
+        h1 {
+            text-align: center;
+        }
+        #section1 {
+            overflow: hidden; /*Utilidad para que imagen o texto no desborde la caja*/
+            text-align: justify;
+        }
+
+        #section1 img { /*La etiqueta IMG que se encuentre dentro de la ID 'section1'*/
+            width: 50%;
+            float: left; /*La IMG se sitúa a la izquierda y el texto a la derecha*/
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+        .clear {
+            clear: both; /*Rompe el float*/
+        }
+        #section2 {
+            background-image: url('img/099_fondo.jpg');
+            background-size: cover;
+        }
+
+        ul {
+            list-style-image: url('img/gorro_cocina.png');
+            display: table; /*UL tiene por defecto display block, por lo que le cambiamos el tiempo de display*/
+            margin: auto; /*Display y Margin son para centrar la lista*/
+            text-align: left;
+        }
+        ol li {
+            list-style: decimal;
+            font-size: 12px;
+        }
+    
+
+    .colorblue {
+        color: blue;
+        }
+    .colorred {
+        color: red;
+    }
+    .alto30 {
+        line-height: 30px;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .italic {
+        font-style: italic;
+    }
+    .tachar {
+        text-decoration: line-through;
+    }
+    code {
+        font-family: none;
+    }
+    td, th {
+        border: 2px solid blue;
+        width: 50px;
+        height: 30px;
+    }
+    table {
+        margin: auto;
+    }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <nav>
+            <a href="#section1">Sección 1</a>
+            <a href="#section1">Sección 2</a>
+            <a href="#section1">Sección 3</a>
+            <a href="#section1">Sección 4</a>
+
+        </nav>
+        <section id="section1">
+            <h1>SECCIÓN 1: imagen y texto alrededor</h1>
+            <img src="img/img1.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus culpa nihil omnis iste ipsam, accusamus autem sunt qui exercitationem dolores, reiciendis illum accusantium architecto aperiam quisquam necessitatibus molestiae a recusandae?</p>
+            <p class="clear">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus culpa nihil omnis iste ipsam, accusamus autem sunt qui exercitationem dolores, reiciendis illum accusantium architecto aperiam quisquam necessitatibus molestiae a recusandae?</p>
+
+        </section>
+        <section id="section2">
+            <h1>SECCIÓN 2: listas y fondos</h1>
+            <ul>
+                <li>Elemento1 lista con imágenes</li>
+                    <ol>
+                        <li>Elemento 1 sublista</li>
+                        <li>Elemento 2 sublista</li>
+                        <li>Elemento 3 sublista</li>
+                    </ol>
+                <li>Elemento2 lista con imágenes</li>
+                    <ol>
+                        <li>Elemento 1 sublista</li>
+                        <li>Elemento 2 sublista</li>
+                        <li>Elemento 3 sublista</li>
+                    </ol>
+            </ul>
+        </section>
+        <section id="section3">
+            <h1>SECCIÓN 3: textos con estilos</h1>
+            <p class="colorblue alto30">Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="colorred">Molestiae explicabo esse sapiente praesentium quae minus?</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita <span class="italic"> odio id perspiciatis voluptas </span>facere hic mollitia doloremque eos! <span class="bold">Debitis!</span></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> I<sup>2</sup> + CO<sub>2</sub> = ?</p>
+            <p><del>Lorem ipsum dolor</del> sit amet consectetur adipisicing elit. <ins>Minima, exercitationem.</ins></p>
+            <p>Lorem ipsum dolor sit amet <code>Var = Hello World!</code></p>
+        </section>
+        <section id="section4">
+            <h1>SECCIÓN 4: tablas y enlaces externos</h1>
+            <table>
+                <caption><a href="http://www.google.es" target="_blank">Ir a Google</a></caption>
+                <tr>
+                    <th>Col1</th>
+                    <th>Col2</th>
+                    <th>Col3</th>
+
+                </tr>
+                <tr>
+                    <td colspan="2">1.1</td>
+                    <td rowspan="3">1.3</td>
+                </tr>
+
+
+                <tr>
+                    <td>2.1</td>
+                    <td>2.2</td>
+                </tr>
+
+
+                <tr>
+                    <td>3.1</td>
+                    <td>3.2</td>
+                </tr>
+                
+
+            </table>
+        </section>
+    </div>
+
+</body>
+</html>
