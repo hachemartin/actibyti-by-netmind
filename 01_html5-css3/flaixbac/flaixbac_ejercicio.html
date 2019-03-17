@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flaixbac</title>
+    <style>
+        * {
+            font-family: arial;
+    }
+    body {
+        background-color: grey;
+    }
+    header{
+        height: 75px;
+        position: relative;
+    }
+    .contenedor {
+        background-color: white;
+        width: 960px;
+        height: 720px;
+        margin: auto;
+    }
+    #seccion1 {
+        height: 280px;
+        background-color: pink;
+    }
+    #seccion2 {
+        height: 280px;
+        text-align: center;
+/*      display: flex;              Otra opción de centrar
+        justify-content: center;
+        align-items: center;    */
+    }
+    footer {
+        height: 90px;
+        position: relative;
+    }
+    article {
+        width: 265px;
+        height: 230px;
+        display: inline-block;
+        position: relative;
+        top: 25px;
+/*                                  Otra opción de centrar
+        margin-top: 25px; */
+        margin: 0 10px;
+        vertical-align: top;
+        text-align: justify;
+
+    }
+    nav {
+        width: 320px;
+        height: 30px;
+        position: absolute;
+        right: 0px;
+        bottom: 5px;
+    }
+    footer nav {
+        top: 0px
+    }
+
+    
+    nav a {
+        display: inline-block;
+        margin-left: 10px;
+        font-family: arial;
+        font-size: 0.8em;
+        text-decoration: none;
+        line-height:30px;
+        padding:0px 10px;
+        transition: 1s;
+    }
+    nav a:hover {
+        background-color: blue;
+        color: white;
+        transition: 1s;
+    }
+    h2 {
+        margin: 0px;
+    }
+    #enlacefooter {
+        margin-top: 5px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="contenedor">
+        <header>
+            <img src="img/VUIT.png" alt="">
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Vídeos</a>
+                <a href="#">Álbumes</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+        <section id="seccion1">
+            <img src="img/imatge_slider1.png" alt="">
+        </section>
+        <section id="seccion2">
+            <article>
+                <h2>Div inferior 1</h2>
+                <img src="img/pantalles_vuit_app.png" alt="">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error accusantium placeat consequuntur nobis ut, recusandae pariatur officia nulla iure cum.</span>
+            </article>
+            <article>
+                <h2>Div inferior 2</h2>
+                <img src="img/pantalles_vuit_app.png" alt="">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error accusantium placeat consequuntur nobis ut, recusandae pariatur officia nulla iure cum.</span>
+            </article>
+            <article>
+                <h2>Div inferior 3</h2>
+                <img src="img/pantalles_vuit_app.png" alt="">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error accusantium placeat consequuntur nobis ut, recusandae pariatur officia nulla iure cum.</span>
+            </article>
+
+        </section>
+        <footer>
+            <a href="#">Cibernarium</a>
+            <nav id="enlacefooter">
+                <a href="#">Inicio</a>
+                <a href="#">Vídeos</a>
+                <a href="#">Álbumes</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </footer>
+    </div>
+
+</body>
+</html>
