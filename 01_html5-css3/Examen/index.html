@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Título de la página</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="Examen 1" content="Examen práctico HTML5 y CSS3">
+    <meta name="author" content="David Hernández Martín">
+    <meta name="keywords" content="HTML, CSS, Desarrollo web, Aplicaciones web">
+    
+    <style>
+
+      
+    </style>
+</head>
+<body>
+    
+<div class="contenedor">
+
+    <header>
+        <img src="img/logo.png" alt="logo">
+        <h1>Título de la página</h1>
+    </header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+
+
+    <section>
+        <article>
+            <h2>Imagen y texto</h2>
+            <img src="img/html5-imagen.jpg" alt="html5">
+            <p>Lorem ipsum dolor sit amet <strong>consectetur adipisicing elit.</strong> Vitae, odit aspernatur. Ducimus fugiat incidunt architecto recusandae illum eveniet perspiciatis officia facilis nostrum. Nam eius, quibusdam adipisci deleniti span <span class="blue">exercitationem quis architecto quo.</span> Necessitatibus, saepe? Delectus quibusdam cupiditate debitis inventore repellat, temporibus, beatae amet suscipit, labore dignissimos fugiat ipsam numquam neque asperiores?</p>
+            <p class="clear">Lorem ipsum dolor sit amet, <span class="cursiva">consectetur adipisicing elit.</span> Porro, aliquam ipsam laudantium rerum voluptas minima sit facere illo, quibusdam obcaecati saepe perspiciatis illum dignissimos, autem numquam iure commodi nihil magnam quam rem. Ipsa rerum minima laudantium!</p>
+
+        </article>
+        <h2>Formulario de contacto</h2>
+        <article class="formulario">
+            
+            <form action="#">
+                    <label for="name">Nombre y apellidos</label>
+                    <input class="input1" type="text" name="name" placeholder="Su nombre y apellidos" maxlength="50" required><br>
+                    <label for="correo" placeholder="sunombre@dominio.com">Correo electrónico</label>
+                    <input class="input1" type="email" name="email" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+                    <label for="newsletter">Subscribirse</label>
+                    <input class="input1" type="radio" id="si" value="si" name="newsletter" required><span for="si">Sí</span>
+                    <input type="radio" id="no" value="no" name="newsletter"><span for="no">No</span><br>
+                    <label class="input1" for="select-curso">Elija curso</label>
+                    <select name="curso" id="select-curso" required>
+                        <option disabled selected value="">Curso</option>
+                        <option value="html">HTML</option>
+                        <option value="javascript">Javascript</option>
+                        <option value="php">PHP</option>
+                    </select><br>
+                    <input class="botonenviar" type="submit" name="Enviar" value="Enviar">
+                </form>
+        </article>
+        
+    </section>
+
+    <aside>
+        <div class="aside scroll">
+        <h2 id="textoscroll">Texto con scroll</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum obcaecati cum aliquid consectetur placeat repudiandae quisquam nemo odit deleniti assumenda. Neque similique quia dicta eum illum! Adipisci iure, amet maxime neque nesciunt sapiente quisquam accusantium dolorem maiores vero dolor assumenda animi, quaerat similique! Doloremque assumenda aliquid consequuntur harum, impedit facere! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero rem omnis cumque praesentium voluptatem ullam molestias perspiciatis aliquid fugiat error!</p>
+        </div>
+        <div class="aside asidedown">
+            <h2>Lista</h2>
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 5</li>
+                <li>Elemento 6</li>
+
+            </ul>
+        </div>
+    </aside>
+
+</div>
+
+</body>
+</html>
