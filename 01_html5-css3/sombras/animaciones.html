@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    #martillo {
+        animation:animacion_martillo 1s;
+        animation-iteration-count: infinite;
+        transform-origin: 0% 100%;
+    }
+
+    @keyframes animacion_martillo{
+  0% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  40% {
+    transform:  translate(83px,0px)  rotate(90deg) ;
+  }
+  100% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+}
+
+
+
+/*
+    @keyframes animacion_martillo{
+        0%{transform:translateX(0px);}
+        60%{transform:translate(200px, 0px), transform:rotate(20deg);}
+        100%{transform:translate(0px, 0);}
+}
+
+   @keyframes animacion_martillo{
+        0%{transform:translateX(0px);}
+        20%{transform:translateX(400px);}
+        40%{transform:translate(400px, 400px);}
+        60%{transform:translate(800px, 400px);}
+        80%{transform:translate(1400px, 0);}
+        100%{transform:translate(0px, 0);}
+} */
+
+    </style>
+</head>
+<body>
+    
+        <div id="martillo">
+                <svg width="120" height="190" xmlns="http://www.w3.org/2000/svg")>
+                <rect x="43" y="10" width="14" height="160" rx="6" ry="5" fill="#895111"/>
+                <rect x="43" y="10" width="14" height="160" rx="6" ry="5" fill="#895111"/>
+                <rect x="45" y="15" width="4" height="150" rx="6" ry="6" fill="#A68661"/>
+                <rect x="10" y="22" width="80" height="45" rx="14" ry="12" fill="#6E6E5F"/>
+                <rect x="20" y="37" width="62" height="24" rx="6" ry="6" fill="#898982"/>
+                <rect x="20" y="25" width="62" height="6" rx="4" ry="4" fill="#C2C2B6"/>
+                <rect x="43" y="67" width="14" height="9" fill="#482907"/>
+                </svg>
+               </div>
+
+</body>
+</html>
