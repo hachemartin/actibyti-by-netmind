@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+        <script type="text/javascript">
+            // declaramos las dos variables de número
+            var nota = parseInt(prompt('introduce la nota del examen'));
+
+            /* se empieza por las condiciones más restrictivas
+                -si no está entre 0-10
+                -si la nota es 10
+                */
+
+            // si se cumple esta condición
+            if (nota > 5 && nota < 10) {
+                // nota es mayor que 5
+                document.write('Aprobado');
+            // y si no se cumple...
+            } else if (nota < 5){
+                // si es menor que 5
+                document.write('Suspenso');
+            } else if (nota == 5){
+                // si es igual a 5
+                document.write('¡Por los pelos!');
+            } else if (nota == 10){
+                document.write('Matrícula de honor');
+            } else if (nota <0 || nota >10 || isNaN(nota)) {
+                    document.write('Nota no válida');                
+            } else {
+                nota = parseInt(prompt('introduce otra vez la nota del examen'));
+            }
+       </script> 
+
+</head>
+<body>
+    
+</body>
+</html>
