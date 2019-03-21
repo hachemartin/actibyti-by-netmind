@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    .contenedor {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        position: relative;
+        background-color: yellow;
+    }
+    .verde {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        transition: 3s;
+        transform: rotate(180deg);
+    }
+    .verde:hover {
+/*        left: 200px;
+        transition: 3s; */
+        transform: translate(300px, 140px);
+
+    }
+    .circulo {
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        background:purple;
+        transition: width 5s, height 1s, background 4s;
+        margin: auto;
+    }
+    .circulo:hover {
+        width:400px;
+        height:400px;
+        background:pink;
+        transition: width 1s, height 3s, background 3s;
+        transition-timing-function: cubic-bezier(1,0,0,1.1);
+}
+    .boton {
+        margin: auto;
+        width: 200px;
+        height: 50px;
+        background-color: gold;
+        border: 3px ridge silver;
+        box-shadow: 3px 3px 3px silver;
+        transition: 0.5s;
+    }
+    .boton:hover {
+        background-color: #ffff5b;
+        box-shadow: 0px 0px 0px #858585;
+        transform: translate(2px 2px);
+    }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="contenedor">
+    <h5> <a href="#"></a>TEXTO OCULTO</h5>
+    <div class="verde">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, est?</div>
+
+    </div></div>
+    <div class="circulo"></div>
+
+    <div class="boton"></div>
+
+
+
+
+</body>
+</html>
