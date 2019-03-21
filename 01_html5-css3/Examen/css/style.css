@@ -1,0 +1,205 @@
+/* Éste es el archivo CSS del examen */
+
+/* Aplicaremos la misma tipografía a toda la hoja de estilo */
+* {
+    font-family: Arial;
+}
+
+body {
+    background-image: url('../img/bg.jpg'); repeat;
+    /* por si la imagen de fondo pudiera fallar por conexión, añadimos color de fondo */
+    background-color: #414040;
+}
+
+.contenedor {
+    width: 960px;
+    margin: auto;
+/*    border: 1px solid yellow;
+    background: yellow; BORRAR*/
+    position: relative;
+    box-sizing: content-box
+}
+
+header {
+/*    height: 90px;  90 de cabecera + 35px de nav */
+    height: 90px;
+    width: 100%;
+/*    border: 1px solid cyan;
+    border: 1px solid white;
+    background-color: aqua;  BORRAR */
+    position: relative;
+    margin-bottom: 20px;
+    
+
+}
+
+header h1 {
+    font-size: 20px;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 65px;
+}
+
+header img {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+}
+
+nav {
+    height: 35px;
+ /*   border: 1px solid pink; */
+    background-image: linear-gradient(to right, #5c5c5c, #bebebe);
+    border-radius: 10px;
+    position: relative; /* Siempre que usemos posicionamiento absolute, la caja contenedora ha de tener un posicionamiento relativo */
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 10px black;
+    line-height: 35px; /* cetramos vertical el texto del enlace */
+
+
+}
+
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+
+}
+
+nav ul li a {
+/*    border: 1px solid yellow; */
+    width: 300px;
+    text-decoration: none; /* quitamos subrayado */
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    margin-right: 30px;
+    padding: 10px;
+
+    
+}
+
+nav ul li a:hover {
+    color: yellow;
+    background-color: rgb(80, 97, 3);
+    padding: 10px;
+    
+}
+
+section {
+    width: 680px;
+    background-color: white;
+/*    border: 1px solid black; */
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px black;
+    padding: 25px;
+    text-align: justify;
+    box-sizing: border-box;
+    top: 0px;
+    float: left;
+    margin-bottom: 50px; /* para visualizar espacio en la zona inferior, continuación de la página o footer */
+    
+}
+
+h2 {
+    color: white;
+    font-size: 18px;
+    background-color: grey;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px;
+}
+
+p {
+    font-size: 15px;
+}
+
+section img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.cursiva {
+    font-style: italic;
+}
+
+.blue {
+    color: blue;
+}
+
+.clear {
+    clear: both;
+}
+
+label {
+    width: 32%;
+    display: inline-block;
+    text-align: left;
+    padding: 10px 0px 10px 4px;
+}
+input[required] {
+    border: 1px solid yellow;
+
+
+}
+
+.botonenviar {
+    margin-left: 300px;
+}
+
+
+article {
+/*    border: 1px solid blue; */
+width: 100%;
+display: block;
+}
+
+.formulario {
+    width: 100%;
+/*    border: 1px solid aqua; */
+    display: inline-block;
+}
+
+aside {
+    width: 260px;
+    position: relative;
+    float: right;
+}
+
+.aside {
+    width: 260px;
+    height: 300px;
+    background-color: yellow;
+    border-radius: 15px;
+/*    box-shadow: 3px 3px 3px black; */
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: justify;
+
+}
+.scroll {
+    overflow: auto; /* scroll solo aparece cuando el texto desborda la caja */
+
+}
+
+.asidedown {
+    margin-top: 20px;
+}
+
+aside ul li {
+    list-style: none;
+    font-weight: bold;
+}
+
+#textoscroll {
+    width: 183px;
+    position: absolute;
+    text-align: center;
+}
