@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // declaramos las variables como peticiones de valor
+        var noches = parseInt(prompt('Reserva Hotel: ¿Cuántas noches?'));
+        var precioNoche = 60;
+        var ciudad = prompt('Destino: ¿Qué ciudad?');
+
+        var coche = parseInt(prompt('Alquiler Coche: ¿Cuántos días?'));
+        var precioCoche = 40;
+
+
+        // ejecutamos la función con (VARIABLE, VARIABLE)
+        var resultadoPrice = parseInt(costeHotel(noches, precioNoche)); // siempre que la función tenga parámetro de entrada, tendremos que recogerlo
+        // hay que declarar función de resultado para guardar dentro el valor de la función
+        
+        var resultadoCity = parseInt(costeAvion(ciudad));
+        var resultadoCoche = parseInt(costeCoche(coche, precioCoche));
+        var resultadoTotal = costeViaje(noches, precioNoche, ciudad, coche, precioCoche);
+
+
+        // las variales que se definen dentro de una función son Variables Locales, y sólo se ven dentro de las funciones
+/*        alert(resultadoPrice);
+        alert(resultadoCity);
+        alert(resultadoCoche);  */
+
+        alert(resultadoTotal);
+
+        
+        // FUNCIÓN HOTEL
+        function costeHotel(numeroNoches, precioNoche) {
+            // si no definéramos la variable con Var, la función se podría ver fuera de la función
+            var total = (numeroNoches * precioNoche);
+
+            // devuelve el valor de la variable suma fuera de la función
+            return total;
+            // alert(suma);
+        }
+
+        // FUNCIÓN AVIÓN
+        function costeAvion(ciudad) {
+            switch(ciudad){
+                case "París":   // contemplamos ambas posibilidades o usar Combo
+                case "Paris":
+                    costeVuelo=180;
+                    break;
+                case "Boston":
+                    costeVuelo=600;
+                    break;
+                case "Londres":
+                    costeVuelo=120;
+                    break;
+                default:
+                    costeVuelo="Ciudad no válida";
+                    break;
+            }
+            return costeVuelo;
+        }
+
+        // FUNCIÓN COCHE
+        function costeCoche(diaCoche, precioCoche){
+            if (diaCoche >= 7){
+                totalCoche = (diaCoche*precioCoche)-50;
+            } else if (diaCoche>=3 && diaCoche<7) {
+                totalCoche = (diaCoche*precioCoche)-20;
+            } else {
+                totalCoche = diaCoche * precioCoche;
+            }return totalCoche;
+        }
+
+        // FUNCIÓN COSTEVIAJE
+        function costeViaje(noches, precioNoche, ciudad, coche, precioCoche) {
+            var totalCosteViaje = costeHotel(noches, precioNoche) + costeAvion(ciudad) + costeCoche(coche, precioCoche);
+
+            return totalCosteViaje;
+        }
+            
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
