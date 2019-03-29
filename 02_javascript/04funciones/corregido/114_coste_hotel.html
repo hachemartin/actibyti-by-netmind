@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//PARTE I
+
+		//solicitar al usuario un número de noches de hotel
+		var noches = parseInt(prompt('noches?')); 
+
+		//llamar a una función para calcular el precio y recoger el resultado
+		//var costeHotel = hotel(noches);
+
+		//mostrar el resultado con un alert
+		//alert(costeHotel)
+
+		//definir la función hotel
+		function hotel(n) {
+			var coste = n * 60;
+			return coste;
+		}
+
+		//PARTE II
+
+		//solicitar al usuario una ciudad
+		var ciudad = prompt('ciudad?');
+
+		//llamar a una función para calcular el precio del avion y recoger el resultado
+		//var costeAvion = avion(ciudad)
+
+		//mostrar el resultado con un alert
+		//alert(costeAvion);
+
+		//definir la función avion
+		function avion(c) {
+			switch (c) {
+				case 'paris':
+				case 'Paris':
+					var precio = 180;
+					break;
+				case 'boston':
+					var precio = 600;
+					break;
+				case 'londres':
+					var precio = 120;
+					break;
+				default:
+					alert('ciudad no válida');
+					var precio = 0;
+			}
+
+			return precio;
+		}
+		
+		//PARTE III
+
+		//solicitar al usuario número de días de alquiler
+		var dias = parseInt(prompt('días alquiler?'));
+
+		//llamar a una función para calcular el precio del alquiler y recoger el resultado
+		//var costeCoche = coche(dias)
+
+		//mostrar el resultado con un alert
+		//alert(costeCoche);
+
+		//definir la función coche
+		function coche(d) {
+			//calcular el precio total
+			var precio = d * 40;
+
+			//aplicar descuento
+			if (d >= 7) {
+				precio = precio -50;
+			} else if (d >= 3) {
+				precio = precio - 20;
+			}
+
+			return precio;
+		}
+
+		//PARTE IV
+
+		//lamar a la función coste total del viaje con las variables donde hemos recogido los valores que hemos solicitado al usuario con los tres prompts
+		//el resultado lo recogemos en la variable costeViaje
+		var costeViaje = viaje(noches, ciudad, dias);
+
+		//mostrar el coste total del viale
+		alert(costeViaje);
+
+		//función que calcula el coste total del viaje
+		//recibirá como parámetros los tres valores informados al llamrar la función
+		function viaje(noches, ciudad, dias) {
+			//el precio total se obtiene con la suma de los resultados que calculan cada una de las tres funciones que teníamos definidas
+			var precio = hotel(noches) + avion(ciudad) + coche(dias);
+
+			//devolvemos el precio para ser utilizado fuera de la función
+			return precio;
+		}
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
