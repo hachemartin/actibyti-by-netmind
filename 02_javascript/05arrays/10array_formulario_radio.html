@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        function enviaFormulario() {
+            // recuperar los radio buttons
+
+            var radios = document.formulario.radio;
+
+            // recorrer el array para averiguar qué radio button está seleccionado
+
+            for( i in radios) {
+                // preguntar si el radio está seleccionado
+                if(radios[i].checked) {
+                    // si está seleccionado, recuperamos el valor del radio button
+                    var valorRadio = radios[i].value;
+                }
+            }
+
+            alert(valorRadio);
+        }
+
+
+
+    </script>
+    
+</head>
+<body>
+    
+        <form name="formulario">
+                <label>1 </label><input type="radio" name="radio" value="Radio1" checked></br>
+                <label>2 </label><input type="radio" name="radio" value="Radio2"></br>
+                <label>3 </label><input type="radio" name="radio" value="Radio3"></br>
+
+                <input type="button" value="Enviar" onclick="enviaFormulario()">
+                </form>
+
+</body>
+</html>
