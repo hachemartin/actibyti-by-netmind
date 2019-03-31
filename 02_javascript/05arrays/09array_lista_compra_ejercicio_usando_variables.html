@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    // creamos un array vacío
+    var listaNumeros = [];
+
+    // bucle 'for' que se ejecutará 10 veces
+    for (i = 0; i < 10; i++) { 
+            // calcular número aleatorio
+            var numero = parseInt(Math.floor(Math.random() * (100)+1)) ;
+            // guardar número en el array
+            listaNumeros.push(numero);
+    }        
+    
+    // RESULTADO CON VARIABLES SIN MODIFICAR EL ORDEN DEL ARRAY
+
+    var menor = 101;
+    var mayor = 0;
+
+    for (i in listaNumeros) {
+        if (listaNumeros[i] > mayor) {
+            mayor = listaNumeros[i]
+        }
+     
+        if (listaNumeros[i] < menor) {
+            menor = listaNumeros[i];
+        }
+    }
+
+    document.write(listaNumeros);
+
+    document.write('<br>');
+
+    document.write('menor: '+menor+' mayor: '+mayor);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
