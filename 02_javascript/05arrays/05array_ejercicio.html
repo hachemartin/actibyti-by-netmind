@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // Definimos variable, array vacío
+        var numbers = [];
+
+        // bucle for hasta 10
+        for (var i = 0; i < 10; i++) {  
+        numbers.push(prompt('Introduce número ' + (i+1)));              // pedimos introducir valor del array
+        }
+        document.write('Los números sin ordenar son: ' + numbers.join(', ')+'<br>');       // imprimimos array
+
+        numbers.sort(function(a, b){return a - b});                      // ordenar números
+
+        document.write('Los números ordenados son: ' + numbers.join(', '));       // imprimimos array
+        
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
