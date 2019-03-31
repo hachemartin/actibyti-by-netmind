@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        function enviaFormulario() {
+            // recuperar los radio buttons
+
+            var checks = document.formulario.checkbox;
+
+            // creamos array de valores de checks
+            var valorChecks = new Array();
+
+            // recorrer el array para averiguar qué checkboxes está seleccionado
+
+            for( i in checks) {
+                // preguntar si el checkbox está seleccionado
+                if(checks[i].checked) {
+                    // si está seleccionado, recuperamos el valor del checkbox (si están seleccionados los 3, se han de mostrar en un array)
+                    valorChecks.push(checks[i].value);
+                }
+            }
+
+            alert(valorChecks);
+        }
+
+
+
+    </script>
+    
+</head>
+<body>
+    
+        <form name="formulario">
+                <label>1 </label><input type="checkbox" name="checkbox" value="checkbox1"></br>
+                <label>2 </label><input type="checkbox" name="checkbox" value="checkbox2"></br>
+                <label>3 </label><input type="checkbox" name="checkbox" value="checkbox3"></br>
+
+                <input type="button" value="Enviar" onclick="enviaFormulario()">
+                </form>
+
+</body>
+</html>
