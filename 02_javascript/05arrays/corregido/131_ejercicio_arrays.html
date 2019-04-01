@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//crear el array vacio
+
+		var arrayNumeros = new Array();
+
+		//preguntar al usuario que introduzca 10 números
+		for (i=0; i<10; i++) {
+			var numero = prompt('número?')  
+			//guardarlos en un array
+			arrayNumeros.push(numero)
+		}
+
+		//mostrar el array
+		document.write(arrayNumeros)
+		document.write('<br>')
+
+		//ordenar el array
+		arrayNumeros.sort()
+
+		//volver a mostrar el array;
+		document.write(arrayNumeros)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
