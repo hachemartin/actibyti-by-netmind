@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		div.script {
+			display: block;
+			color: black;
+			width: 700px;
+			padding: 25px;
+			margin: 5px auto auto auto;
+			box-sizing: border-box;	
+			text-align: left;
+			border: 2px solid black;
+			border-radius: 25px;
+		}
+		label {
+			width: 200px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		textarea {
+			height: 100px;
+		}
+		#resumen {
+			width: 600px;
+		}
+	</style>
+	<script>
+		
+		function enviaFormulario(){
+
+		
+
+		var nombre = document.getElementById('nombre').value;
+		var material = document.getElementById('material').value;
+		var radios = document.formulario.radio;
+
+		var texto1 = " ha pedido una caja de ";
+
+		var texto2 = " de dimensión ";
+		var texto3 = ". El precio es de: ";
+		var texto3 = ". ";
+
+
+		var radios = document.formulario.dimension;
+
+		switch (material){
+                case 'Plástico':
+                    materialPrice = 100;
+                    break;
+                case 'Aluminio':
+                    document.write('Tarragona<br>');
+                    break;
+                case 'Madera':
+                    document.write('Girona<br>');
+					break;
+				case 'Acero':
+                	document.write('Girona<br>');
+					break;
+				case 'Platino':
+                    document.write('Girona<br>');
+                    break;
+                default:
+                    document.write('Ciudad no válida');
+                    break;
+            }
+
+
+		for( i in radios) {
+                // preguntar si el radio está seleccionado
+                if(radios[i].checked) {
+                    // si está seleccionado, recuperamos el valor del radio button
+                    var valorRadio = radios[i].value;
+                }
+        }
+
+		
+		// recorrer el array para averiguar qué radio button está seleccionado
+
+		
+
+		document.getElementById('resumen').value = nombre+radios+materialPrice;
+		}
+		
+	</script>
+</head>
+<body>
+	<div class="script">
+		<form name="formulario">
+			<label>Nombre del cliente:</label><input type="text" id="nombre"></br></br>
+			<label>Material de la caja:</label>
+			<select id="material">
+				<option>Plástico</option>
+				<option>Aluminio</option>
+				<option>Madera</otpion>
+				<option>Acero</option>
+				<option>Platino</option>
+			</select></br></br>
+			<label>Dimensiones de la caja:</label>
+			Pequeña<input type="radio" name="dimension" value="Pequeña" checked>
+			Mediana<input type="radio" name="dimension"value="Mediana">
+			Grande<input type="radio" name="dimension" value="Grande"></br></br>
+			<label>Comentarios</label><textarea id="comentarios"></textarea></br></br>
+			<input type="button" value="Enviar" onclick="enviaFormulario()">
+		</form><br>
+		<input disabled type='text' id='resumen'>
+	</div>
+</body>
+</html> 
