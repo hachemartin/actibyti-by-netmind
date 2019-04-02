@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		//crear array lista compra
+		var lista = new Array()
+
+		//solicitar al usuario 5 artículos
+		for (i=0; i<5; i++) {
+			var articulo = prompt('artículo?')
+
+			//verificar si el artículo ya existe en el array de la lista
+			var indice = lista.indexOf(articulo);
+
+			//si el artículo no existe, guardarlo en el array
+			if (indice == -1) {
+				lista.push(articulo)
+			} else {
+			//si el artículo existe, mostrar un mensaje...
+				alert('el artículo ya existe');
+			//...y restar 1 a la iteración del bucle
+				i--
+			}
+		}
+
+		//imprimir el array (debe tener 5 elementos)
+		document.write(lista)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
