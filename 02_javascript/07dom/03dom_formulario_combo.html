@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>javascript</title>
+
+        <script type="text/javascript">
+                function enviar() {
+                        // escribir el valor en el input
+                        var combo = document.getElementById('comboSeleccion').value
+                        // recuperar elvalor de la combo
+                        document.getElementById('campoSeleccionado').value = combo
+                }
+        </script>
+
+</head>
+
+<body>
+        <form>
+                <select id="comboSeleccion" onchange="enviar()">
+                        <option value='0'>Seleccione una opcion, por favor</option>
+                        <option value='1'>Opcion 1</option>
+                        <option value='2'>Opcion 2</option>
+                </select>
+                <input type="text" id="campoSeleccionado">
+        </form>
+</body>
+
+</html>
