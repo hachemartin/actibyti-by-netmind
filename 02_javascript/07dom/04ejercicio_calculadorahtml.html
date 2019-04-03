@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+    <script type="text/javascript">
+        function enviar() {
+            // declaramos las variables
+            var operador = document.getElementById('operacion').value;
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+
+
+/*            // validar que estén informados: opción 1
+            if (isNaN(num1) || num1 == ''){
+                alert('Números no válidos');
+                return;
+            } */
+
+            // validar opción 2 
+
+        var inputNum1 = document.getElementById('num1')
+        if (!inputNum1.checkValidity()) {
+            alert(inputNum1.validationMessage);
+            document.getElementById('num1').style.border='1px solid red';
+            return;
+        } else {
+            document.getElementById('num1').style.border='';
+        }
+
+        var inputNum2 = document.getElementById('num2')
+        if (!inputNum2.checkValidity()) {
+            alert(inputNum2.validationMessage);
+            document.getElementById('num2').style.border='1px solid red';
+            return; 
+        } else {
+            document.getElementById('num2').style.border='';
+
+        }
+
+            /*           // resolución con if
+                if (operador == '+') {
+                    var resultado = (num1 + num2);
+                } else if (operador == '-') {
+                    var resultado = (num1 - num2);
+                } else if (operador == '*') {
+                    var resultado = (num1 * num2);
+                } else {
+                    var resultado = (num1 / num2);
+            }
+            */
+
+            if (operador=='0') {
+                alert('Selecciona una operación de la lista');
+                return;
+            }
+
+            // realizamos el cálculo
+            var resultado = eval(num1+operador+num2);
+            // mostrar el valor en el input
+            document.getElementById('resultado').value = resultado
+        }
+    </script>
+
+</head>
+
+<body>
+    <form>
+        <input type="number" name="number" id="num1" required>
+
+        <select id="operacion">
+            <!-- desactivamos la opción, pero la ponemos como primera opción -->
+            <option disabled selected value="0">Operación</option>
+            <option>+</option>
+            <option>-</option>
+            <option value='*'>x</option>
+            <option>/</option>
+
+        </select>
+        <input type="number" name="number2" id="num2" required>
+        =
+        <input type="text" id="resultado" disabled>
+        <input type="button" value="Calcular" onclick="enviar()">
+
+    </form>
+</body>
+
+</html>
