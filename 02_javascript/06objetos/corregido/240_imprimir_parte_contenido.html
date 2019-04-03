@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>imprimir</title>
+	<meta charset="UTF-8">
+	<script> 
+		function imprimir() {
+			//recuperar la sección a imprimir del documento con innerHTML
+
+			//abrir ventana
+
+		    //abrir etiquetas del head del documento
+
+			//Cerrar etiquetas del head
+			
+			//escribir la sección que queremos imprimir con document.write
+
+			//cerrar etiquetas del body
+
+			//cerrar escritura del documento (para forzar a que navegadores como chrome renderizen la página)
+			
+			//asegurarnos que la ventana del popup sea la que está en primer plano
+			
+			//asegurar que se ha cargado el contenido antes de imprimir
+			ventana.onload = function() {
+				//imprimir la ventana
+				
+				//cerrar la ventana
+			}
+		}
+	</script>
+	<style type="text/css">
+		div {
+			width: 400px;
+			padding: 20px;
+			border: 2px solid blue;
+			text-align: justify;
+			margin: auto;
+		}
+
+		img {
+			float: left;
+			margin-right: 15px;
+		}
+	</style>
+
+</head>
+<body>
+		<div id='imprimir'>
+			<img src="http://lorempixel.com/200/200/sports">
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+		</div><br>
+		<center><input type='button' value='imprimir' onclick="imprimir()"></center>
+</body>
+</html>
