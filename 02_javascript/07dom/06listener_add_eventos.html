@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+    <script type="text/javascript">
+        // esperar a que se cargue la página antes de activar el script
+        window.onload = function () {
+            // activamos un 'escuchador', con elemento a detectar y función que queremos que se ejecute
+            document.getElementById("capa").addEventListener("click", alerta);
+            document.getElementById("enlace").addEventListener("mouseover", alerta);
+            document.getElementById("lista").addEventListener("dblclick", dblclickEnlace)
+        }
+
+        function alerta() {
+            alert('Se ha ejecutado el evento');
+            // y desactivamos esta
+            document.getElementById("capa").removeEventListener("click", alerta);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="capa" style="background-color:blue; width:200px; height:50px"></div><br>
+    <a id="enlace" href="#">enlace</a><br>
+    <ul id="lista">
+        <li>Lista1</li>
+        <li>Lista2</li>
+        <ul>
+</body>
+
+</html>
