@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            // activamos un 'escuchador', con elemento a detectar y función que queremos que se ejecute
+           document.getElementById('box1').addEventListener("click", clicBox1);
+           document.getElementById('box2').addEventListener("click", clicBox2);
+
+        }
+        // función hacer clic en la caja 1, afectará a la caja 2
+        function clicBox1() {
+        document.getElementById("box2").innerHTML+=
+       "clic sobre la caja 1 <br>";
+        }
+        // función hacer clic en la caja 2, afectará a la caja 1
+        function clicBox2() {
+        document.getElementById("box1").innerHTML+=
+       "clic sobre la caja 2 <br>";
+        }
+       </script>
+</head>
+<body>
+<div id="contenedor">
+    <div id="box1" style="background-color:green; width:400px; height:200px">
+    </div>
+    <div id="box2" style="background-color:blue; width:400px; height:200px">
+</div>
+
+</div> 
+</body>
+</html>
