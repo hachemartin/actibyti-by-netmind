@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+    <script type="text/javascript">
+        // esperar a que se cargue la página antes de activar el script
+        window.onload = function () {
+            // activamos un 'escuchador', con elemento a detectar y función que queremos que se ejecute
+            addEventListener("mousemove", function() {raton(event)});
+        }
+
+        function posicionRaton(event) {
+            document.getElementById("cory").innerHTML="coordenada y="+event.pageY;
+            document.getElementById("corx").innerHTML="coordenada x="+event.pageX;
+        }
+
+        function raton(event) {
+            var x = event.pageX;
+            var y = event.pageY;
+
+            document.getElementById('x').innerHTML=x;
+            document.getElementById('y').innerHTML=y;
+        }
+
+
+    
+    </script>
+
+</head>
+
+<body>
+ 
+    <div id="capa">
+        <span id="x"></span><br><span id="y"></span>
+    </div>
+
+</body>
+
+</html>
