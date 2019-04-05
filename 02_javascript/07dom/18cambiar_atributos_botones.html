@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div {width: 400px; height: 400px; border: 1px solid blue;}
+
+    .color {background-color: goldenrod}
+    </style>
+    
+    <script>
+
+    // función para ver el nombre del atributo actual
+    function ver() {
+        var atributo = document.getElementById('caja').
+        getAttribute('title');
+
+        alert(atributo);
+    }
+    
+    // función para asignar un nuevo atributo
+    function asignar() {
+        document.getElementById('caja').setAttribute('class', 'color');
+    }
+    
+    // función para borrar un atributo
+    function borrar() {
+        document.getElementById('caja').removeAttribute('class')
+    }
+
+    </script>
+
+
+</head>
+<body>
+    <input type="button" value="ver" onclick="ver()">
+    <input type="button" value="asignar" onclick="asignar()">
+    <input type="button" value="borrar" onclick="borrar()">
+    <div id='caja'></div>
+</body>
+</html>
