@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyBF8VSFtSdcuA3dnv5qcOQB7naP57SCDdc"></script>
+
+	<script>
+
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        var latitud = position.coords.latitude;
+        var longitud = position.coords.longitude;
+        var altitud = position.coords.altitude;
+        // alert('latitud: '+latitud+' longitud: '+longitud+' altitud: '+altitud)
+
+        mostrarMapa(latitud,longitud);
+        })
+        }
+
+
+        // proyectar en mapa
+        function mostrarMapa(latitud, longitud){
+            var opcionesMapa = {
+            center: new google.maps.LatLng(latitud, longitud),
+            zoom: 18,
+            mapTypeId: google.maps.MapTypeId.HYBRID //TERRAIN
+            };
+            var map = new google.maps.Map(document.getElementById("mapa"),
+            opcionesMapa);
+
+            var latlngmarks = new google.maps.LatLng(latitud,longitud);
+            var mapMarker = new google.maps.Marker({
+            position:latlngmarks,
+            title: "Estás aquí.",
+            });
+            mapMarker.setMap(map);
+
+            
+
+        }
+        
+</script>
+		
+    </script>
+    <style type="text/css">
+
+        #contenedor {
+            text-align: center;
+        }
+        div#mapa {
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+            }
+
+    </style>
+</head>
+<body>
+        <div id="mapa"></div>
+
+</body>
+</html>
