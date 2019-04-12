@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+
+		$(inicio); // ejecutar la función 'inicio()' cuando se cargue la página
+
+		function inicio() {
+		//activar listener
+		$("a").on('click', marcador);
+
+		}
+		// función para marcar
+		function marcador(){
+			// limpiamos la clase de selección
+			$('a').removeClass('marcado');
+
+			// seleccionamos la clase
+			$(this).addClass("marcado");
+		}
+		
+    </script>
+	<style type="text/css">
+		a {
+			display: inline-block;
+			text-decoration:none;
+			width: 100px;
+			height: 30px;
+			border: 2px solid black;
+			background-color: white;
+			text-align: center;
+			vertical-align: top;
+			line-height: 30px;
+		}
+
+		.marcado {
+			background-color: gold;
+		}
+
+	</style>
+</head>
+<body style="width: 600px">
+	<a href='#'>Enlace 1</a>
+	<a href='#'>Enlace 2</a>
+	<a href='#'>Enlace 3</a>
+	<a href='#'>Enlace 4</a>
+</body>
+</html>
