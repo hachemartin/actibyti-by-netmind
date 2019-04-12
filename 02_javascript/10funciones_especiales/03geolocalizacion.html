@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script>
+
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        var latitud = position.coords.latitude;
+        var longitud = position.coords.longitude;
+        var altitud = position.coords.altitude;
+        alert('latitud: '+latitud+' longitud: '+longitud+' altitud: '+altitud)
+        })
+        }
+        
+</script>
+		
+    </script>
+    <style type="text/css">
+
+        #contenedor {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id='contenedor'>
+
+    </div>  
+
+</body>
+</html>
