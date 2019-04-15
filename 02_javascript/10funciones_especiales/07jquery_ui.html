@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+
+
+    
+	<script>
+        $(inicio)
+
+        $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        numberOfMonths: 2,
+        yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        
+
+        function inicio() {
+    $( "#calendario2" ).datepicker();
+
+  };
+
+		
+    </script>
+    <style type="text/css">
+
+        #contenedor {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <input type="date" name="calendario1" id="calendario1">
+    <input type="text" name="calendario2" id="calendario2">
+
+
+</body>
+</html>
