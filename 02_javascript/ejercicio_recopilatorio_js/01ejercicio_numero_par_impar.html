@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    </style>
+
+    <script>
+        // asigna un número a una variable
+        var number = parseInt(prompt('Introduce un número:')); // en este caso pedimos introducir número
+
+        /* sin embargo podemos dejarlo ya asignado en el código:
+        var number = 19;
+        */
+
+        // los mensajes de texto los introducimos en variables, par e impar
+        var mensajePar = 'El número ' + number + ' es par.';
+        var mensajeImpar = 'El número ' + number + ' es impar.';
+        var mensajeError = 'El número introducido es incorrecto.'
+
+
+        // utiliza la estructura de decisión más adecuada para saber si es par o impar y mostrar el resultado
+
+        if (isNaN(number)) {         // la condición más restrictiva primero
+            alert(mensajeError);
+        } else if (number % 2 == 0) {
+            document.write(mensajePar);
+        } else {
+            document.write(mensajeImpar);
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
