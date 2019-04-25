@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    </style>
+
+    <script>
+
+            // bucle que se ejecute 10 veces
+            // se solicita al usuario un número para adivinar el secreto
+            // si coincide, imprime "has ganado" y 'break'
+            // si no coincide mostrar mensaje "no has acertado, te quedan X intentos"
+            var secreto = 5;
+            
+
+            // desde que 'i' vale 3, mientras que 'i' sea mayor que 3...
+            for(i=10; i>0; i--) {               //i-- equivale a i=i-1
+                var numero = parseInt(prompt('Introduce número aquí, tienes '+i+' intentos'));
+                    if (numero==secreto) {      // condición más fuerte: que hayas acertado
+                        alert('¡Has acertado!');
+                        document.write('¡Has acertado! <br/>');
+                        break;
+                    } else if (i>0){        // condición del bucle, que i sea mayor que 0
+                        alert('no has acertado, te quedan '+(i-1)+' intentos');
+                        document.write('no has acertado, te quedan '+(i-1)+' intentos <br/>');
+                    } else {        // si no cumple ninguna, es que no quedan más intentos
+                        alert('no has acertado, ya no te quedan intentos');
+                        document.write('no has acertado, ya no te quedan intentos <br/>');
+                }
+            }     
+    
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
