@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    </style>
+
+    <script>
+
+        // asignamos día de la semana a la variable
+        var day = prompt('Introduce un día de la semana:'); // en este caso pedimos el día
+
+        // utilizamos la estructura de decisión más adecuada para que nos muestre un número en lugar del texto.
+        switch (day) {
+            case 'Lunes':
+                var dayModificado = 1;
+                break;
+            case 'Martes':
+                var dayModificado = 2;
+                break;
+            case 'Miércoles':
+                var dayModificado = 3;
+                break;
+            case 'Jueves':
+                var dayModificado = 4;
+                break;
+            case 'Viernes':
+                var dayModificado = 5;
+                break;
+            case 'Sábado':
+                var dayModificado = 6;
+                break;
+            case 'Domingo':
+                var dayModificado = 7;
+                break;
+        
+            default:
+                dayModificado = "Día incorrecto"
+                break;
+        }
+
+        // creamos una variable para el mensaje en la que recogemos texto y otras variables
+        var mensaje = 'Has escrito '+day+' que corresponde al día '+dayModificado+'º de la semana.'
+
+        // imprimimos en la pantalla el mensaje
+        document.write(mensaje);
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
