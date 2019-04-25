@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    </style>
+
+    <script>
+        // solicitamos un número
+        number = parseInt(prompt('Introduce un número:'));
+
+        // dependiendo del número introducimos, mostramos un mensaje
+        if (number > 7) {
+            document.write('Danger');
+        } else if (number >= 6 && number <= 7) {
+            document.write('High');
+        } else if (number >= 4 && number <= 5) {
+            document.write('Medium');
+        } else if (isNaN(number)) {
+            document.write('Número incorrecto');    // en el caso de introducir un número incorrecto
+        } else {
+            document.write('Low');
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
