@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	
+    <style type="text/css">
+    	#mapa {
+    		width: 800px;
+    		height: 400px;
+    		margin: auto;
+    	}
+    </style>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBF8VSFtSdcuA3dnv5qcOQB7naP57SCDdc"></script>
+    <script>
+    	//comprobar si el navegador permite geolocalización
+		if (navigator.geolocation) {
+			//recuperar coordenadas
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var latitud = position.coords.latitude;
+				var longitud = position.coords.longitude;
+				var altitud = position.coords.altitude;
+				//alert('latitud: '+latitud+' longitud: '+longitud+' altitud: '+altitud)
+
+				//proyectar las coords en un mapa
+				mostrarMapa(latitud, longitud)
+			})
+		}
+
+		function mostrarMapa(latitud, longitud) {
+			//opciones del mapa
+			var opcionesMapa = {
+			center: new google.maps.LatLng(latitud, longitud),
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.HYBRID //TERRAIN
+			};
+
+			//crear y mostrar el mapa
+			var map = new google.maps.Map(document.getElementById("mapa"), opcionesMapa);
+
+			//crear un marcador
+			var marcador = new google.maps.LatLng(latitud, longitud)
+
+			var mapMarker = new google.maps.Marker({
+				position:marcador,
+				title: 'estoy aquí'
+			})
+
+			mapMarker.setMap(map)
+
+			//ventana que se abre al pulsar el marcador
+			var infoWindowOpts = {content: "<img src='img/nave.png'>"};
+
+			var infoWindow = new google.maps.InfoWindow(infoWindowOpts);
+			
+			google.maps.event.addListener(mapMarker, 'click', function() {
+				infoWindow.open(map,mapMarker);
+			});
+		}
+    </script>
+</head>
+<body>
+	<div id='mapa'></div>
+</body>
+</html>
