@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+	<script type="text/javascript">
+        // crear un array con todas las fotos
+        var arrayFotos = new Array(
+            "casa1.jpg",
+            "casa2.jpg",
+            "casa3.jpg",
+            "casa4.jpg",
+            "casa5.jpg",
+            "casa6.jpg",
+            "casa7.jpg",
+            "casa8.jpg");
+        
+        var arrayGaleria = new Array();
+        
+
+        // al cargar la página:
+        $(inicio);
+
+        function inicio(){
+            // ejecutar una función para mostrar las fotos en el div con el id 'fotos'
+            mostrarFotos();     // primero esta función muestra las fotos
+
+            // y ahora que ya se muestran las fotos, ejecutamos un listener para las fotos
+            $('#fotos img').on('dblclick', addGaleria);
+
+            // activamos listener en el div lightbox
+            $('#lightbox').on('click', cerrarLightbox);
+
+            if (localStorage.getItem('galeria')!=undefined){
+                arrayGaleria = localStorage.getItem('galeria');
+                
+                var textoGaleria = localStorage.getItem('galeria')
+
+                // convertir texto a array, le indicamos el separador que estamos usando ','
+                arrayGaleria = textoGaleria.split(',')
+
+                mostrarGaleria();
+            }
+            
+            
+           
+        }
+            // función para mostrar las fotos
+            function mostrarFotos() {
+                var imagen = '';
+                // recorrer el array y montar las etiquetas 'img'
+                for (i in arrayFotos) {
+                    imagen += "<img src='img/"+arrayFotos[i]+"'>";     // recuperamos el nombre de la array y la metemos en imagen
+                    
+            }
+            $('#fotos').html(imagen);
+        }
+            function addGaleria(){
+                // alert('Foto añadida a la galería');
+                
+                // averiguar sobre qué foto hemos hecho click
+                var nombreFoto = $(this).attr('src');
+
+                // quitar el nombre de la carpeta 'img/'
+                var slash = nombreFoto.indexOf('/')+1; // '/' tiene posición 3, 
+                nombreFoto = nombreFoto.substring(slash); // hacemos el corte
+
+                var indice = $(this).index(); // aquí nos da la posición del elemento dentro del 'div', no de la array
+
+                // añadir la foto al array galería previa comprobación de que no exista
+                var indice = arrayGaleria.indexOf(nombreFoto);
+
+                if (indice >= 0){
+                    alert('Esta foto ya existe')
+                } else {
+                arrayGaleria.push(nombreFoto);
+                mostrarGaleria();
+                // y lo guardamos en el storage
+                guardarStorage();
+                }
+
+            }
+
+            function mostrarGaleria() {
+                
+                var imagen = '';
+                // recorrer el array y montar las etiquetas 'img'
+                for (i in arrayGaleria) {
+                imagen += "<div class='cajaimagenes'><img class='fotogaleria' src='img/"+arrayGaleria[i]+"'><img class='borrar' src='img/borrar.png'></div>";     // recuperamos el nombre de la array y la metemos en imagen
+                }
+            
+            // trasladar las etiquetas 'img' al div con id #galeria
+            $('#galeria').html(imagen);
+            // $('#galeria img.borrar').on('click', cerrarGaleria);
+            $('#galeria img.borrar').off('click').on('click', cerrarGaleria);
+
+                // activar listener para mostrar el lightbox
+                $('img.fotogaleria').on('click', abrirLightbox)
+                // activa listener en las fotos de #galería excepto las que tengan la class .borrar
+                // $('#galeria img:not(.borrar)').on('click', abrirLightbox)
+
+        }
+
+            function cerrarGaleria(){
+                var aqui = ''
+                var aqui = $(this).parent().index();
+                // alert(aqui)
+                var elemento = arrayGaleria[i]
+                
+                // var buscar = arrayGaleria.indexOf(arrayGaleria[i]);
+                buscar = jQuery.inArray( elemento, arrayGaleria );
+
+                if (buscar !== -1){
+                    // alert('Esta foto se está borrando');
+                    arrayGaleria.splice(aqui,1);
+                    // $(this).parent("div").css({'display': 'none'});
+                    mostrarGaleria(); // se 'borra' porque ejecutamos de nuevo la función mostrar y se actualizan las fotos
+                
+                    // y lo guardamos en el storage
+                    guardarStorage();
+                }
+                
+                //arrayGaleria.splice(aqui,1); 
+            }
+
+            function abrirLightbox(){
+                // alert('lightbox');
+                var nombreFoto = $(this).attr('src');
+                // alert(elemento);
+
+                
+
+                // recuperar nombre de la foto a incluir en el lightbox
+                var imagen = ''
+                
+                imagen = "<img class='foto' src='"+nombreFoto+"'><img class='prev' src='img/arrow.png'><img class='next' src='img/arrow.png'>";     // recuperamos el nombre de la array y la metemos en imagen
+                
+                $('#lightbox').html(imagen);
+                $('#lightbox').fadeIn(500, 'swing');
+
+                // centrar la imagen en la caja
+                $('#lightbox').css({'display': 'flex', 'align-items': 'center', 'justify-content': 'center'})
+                // $('#lightbox').addClass('lightbox');
+
+                $('.prev').on('click', prev);
+                $('.next').on('click', next);
+            }
+
+            function prev(event) {
+                // alert('prev');
+                event.stopPropagation();
+
+                var imagen = $(this).parent().index();
+                var last = arrayGaleria.length - 1
+                
+                if (imagen==0){
+                    imagen = last;
+            } else {
+                imagen--;
+                
+            }
+            
+            $('.foto').attr('src', "img/"+arrayGaleria[imagen]);
+            // alert(arrayGaleria[imagen])
+        }
+
+            
+
+            function next(event) {
+                // alert('next');
+                event.stopPropagation();
+
+                var imagen = $(this).parent().index();
+                var last = arrayGaleria.length - 1
+                
+                if (imagen==last){
+                    imagen = 0;
+            } else {
+                imagen++;
+                
+            }
+            $('.foto').attr('src', "img/"+arrayGaleria[imagen]);
+            // alert(arrayGaleria[imagen])
+
+            }
+
+            function cerrarLightbox(){
+                // alert('Cerrar lightbox');
+                $('#lightbox').fadeOut(500,'swing');
+            }
+
+            function guardarStorage() {
+
+                if (arrayGaleria.length<=0) {
+                    localStorage.removeItem('galeria');
+                } else {
+
+                var textoGaleria = arrayGaleria.join(',')
+                localStorage.setItem('galeria', arrayGaleria);
+            }
+            }
+
+	
+    </script>
+    <style type="text/css">
+        #contenedor {
+            border: 1px solid gold;
+            padding: 20px;
+            border-radius: 25px;
+            margin: auto;
+            text-align: center;
+            
+        }
+
+        #fotos img {
+            width: 110px;
+            height: 80px;
+        }
+        hr {
+            border: 0.5px solid gold;
+            width: 75%;
+        }
+        .cajaimagenes {
+            position: relative;
+            display: inline-block;
+        }
+        #galeria img {
+            width: 300px;
+            height: 200px;
+            
+        }
+        #galeria img.borrar {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.527);
+            border-radius: 50%;
+            padding: 2px;
+            width: 20px;
+            height: 20px;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            
+        }
+
+        #lightbox {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(238, 234, 14, 0.685);
+            display: none;
+        }
+
+        #lightbox img.foto {
+            height: 75%;
+            position: absolute;
+        }
+
+        .lightbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .prev {
+            display: flex;
+            width: 110px;
+            height: 110px;
+            transform: rotate(-90deg);
+            position: absolute;
+            left: 21%
+            
+        }
+        .next {
+            display: flex;
+            width: 110px;
+            height: 110px;
+            transform: rotate(90deg);
+            position: absolute;
+            right: 21%;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id='galeria'></div>
+            <hr>
+        <div id='fotos'></div>
+        <div id="lightbox"></div>
+    </div>
+</body>
+</html>
