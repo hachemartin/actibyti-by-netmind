@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Ejercicios</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+    </style>
+
+
+</head>
+
+<body>
+
+        <h2>Lista de nombres</h2>
+
+        <p>Aquí puedes ver la lista de nombres que has escrito:</p>
+        
+        <p id="demo"></p>
+
+
+        <script>
+                // Definimos variable, array vacío
+                var listaNombres = [];
+        
+        
+        
+        
+                // bucle for hasta 10
+                for (var i = 0; i < 5; i++) {
+                    var nombre = prompt('Introduce nombre ' + (i + 1));
+                    // declaramos la variable índice
+                    var indice = listaNombres.indexOf(nombre);
+                    // si el índice es '-1' es que no está repetido y lo introduce en la lista
+                    if (indice == -1) {
+                        listaNombres.push(nombre);
+                    // si el índice está vacío, no es válido
+                    } else if (indice == "") {
+                        alert('Inválido');
+                        // y volvemos a la iteración anterior
+                        i--
+                        // en el resto de casos, será repetido
+                    } else {
+                        alert('este nombre ya lo has escrito');
+                        i--
+                    }
+                }
+        
+                // hacemos una iteración que dure lo mismo que la longitud de la array
+                text = "<ul>";
+                for (i = 0; i < listaNombres.length; i++) {
+                text += "<li>" + listaNombres[i] + "</li>";
+                }
+                text += "</ul>";
+        
+                // modificamos el documento HTML
+                document.getElementById('demo').innerHTML = text;
+        
+          
+        
+            </script>
+
+</body>
+
+</html>
