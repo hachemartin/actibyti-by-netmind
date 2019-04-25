@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+    
+	<script>
+        $(inicio)
+
+        $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        numberOfMonths: 2,
+        yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        
+
+        function inicio() {
+  $("#calendario2").daterangepicker() 
+}
+
+
+		
+    </script>
+    <style type="text/css">
+
+        #contenedor {
+            text-align: center;
+        }
+
+        .ui-datepicker .weekend .ui-state-default {
+  background: #FEA;
+}
+.ui-datepicker-calendar td a[data-custom] {
+  position: relative;
+  padding-bottom: 10px;
+}
+.ui-datepicker-calendar td a[data-custom]::after {
+  /*STYLE THE CUSTOME DATA HERE*/
+  content: '€' attr(data-custom);
+  color: grey;
+  display: block;
+  font-size: small;
+}
+
+    </style>
+</head>
+<body>
+
+    <input type="date" name="calendario1" id="calendario1">
+    <input type="text" name="calendario2" id="calendario2">
+
+
+</body>
+</html>
