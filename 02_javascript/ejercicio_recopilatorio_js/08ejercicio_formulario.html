@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Ejercicios</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		form {
+			width: 300px;
+			background-color: #D3D3D3;
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+	<script>
+		// declaramos la array vacía
+		var listaNombres = [];
+
+		// la función que se ejecutará al pulsar 'enviar'
+		function enviarFormulario() {
+		// la variable en la que guardaremos el valor de 'nombre' del formulario
+		var name = document.getElementById('nombre').value;
+		var indice = listaNombres.indexOf(name);
+
+		// validar que el campo 'nombre' no esté vacío
+		if (name =='') {
+				alert('Es obligatorio introducir el nombre');
+				return;
+			} else if (indice == -1){	// hace una búsqueda de duplicados y el resultado es -1 'negativo'
+				listaNombres.push(name);
+				alert('Nombre añadido');
+				return;
+			}else {		// en caso contrario, ya existiría y mostraría alerta
+                alert('este nombre ya lo has escrito');
+            }
+		}
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<form>
+			<label>Nombre y apellidos</label>
+			<input type="text" id="nombre">
+			<br><br>
+			<input type="button" id="enviar" value='Enviar' onclick="enviarFormulario()">
+		</form>
+	</div>
+</body>
+
+</html>
