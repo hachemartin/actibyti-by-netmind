@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter box</title>
+	<meta charset="UTF-8">
+	<script> 
+
+		function calcula(){
+			//recuperar contenido del textarea
+			var contenido = document.getElementById('comentaris').value;
+			
+			//contar el numero de letras del contenido
+            var num_letras = contenido.length;
+            var $restantes = 145 - num_letras;
+			
+			if ($restantes < 0) {
+				alert('Demasiados caracteres.');
+				$restantes = 0;
+			}
+			var new_contenido = contenido.substr(0,145);
+			document.getElementById('comentaris').value = new_contenido;
+			document.getElementById('restantes').value = $restantes;
+		}
+	</script>
+	<style type="text/css">
+		div {
+			width: 400px;
+			padding: 20px;
+			border: 2px solid blue;
+			text-align: justify;
+			margin: auto;
+		}
+	</style>
+
+</head>
+<body>
+	<div id='contenedor'>
+        <textarea id="comentaris" name="comentari" rows="25" cols="25" onkeyup="calcula()">Hola
+		</textarea>
+		<input type="text" id='restantes'>
+        
+    </div>
+</body>
+</html>
