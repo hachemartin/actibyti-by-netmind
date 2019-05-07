@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+        var array_noms = new Array;
+        var quants_noms = 0;
+        var nom,posicio;
+
+        do {
+            // demanar nom a l'usuari
+            nom = prompt ('Diguem un nom');
+
+            // comprovar que no existeixi al array
+            posicio = array_noms.indexOf(nom);
+            if ( posicio >=0 ) {
+                alert('Nom ja demanat');
+            } else {
+                array_noms.push(nom);
+                quants_noms++;
+            }
+        } while (quants_noms< 5);
+        
+        for (i in array_noms) {
+            document.write(i + '-->' + array_noms[i] + '<br>'); 
+        }
+
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
