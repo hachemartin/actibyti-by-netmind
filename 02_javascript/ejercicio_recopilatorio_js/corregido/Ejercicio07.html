@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+        var num1 = 7;
+        var num2 = 0;
+        var contador = 0;
+        var encertat = false;
+
+        while ( contador < 10 && !encertat ){
+            num2 = prompt ('Diguem un nro');
+            contador++;
+            if (num1 == num2) {
+                encertat = true;
+                alert('Felicitats. Has encertat !!!');
+            }
+        }
+        if (!encertat) alert('Sorry. No ho has endevinat')
+
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
