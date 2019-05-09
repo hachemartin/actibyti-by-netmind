@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/page.css" type="text/css" />
+    <script type="text/javascript" src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<script type="text/javascript">
+        // función inicio al cargar la página
+        $(inicio)
+
+        // activamos dentro de la función inicio los 'listener'
+        function inicio() {
+            //activar listener botón de enviar formulario
+            $("input[id='enviar']").on('click', enviar);
+            //activar listener de la combo de color
+            $('#color').on('change', color);
+            //activar listener al botón de alta
+			$("input[id='alta']").on('click', altaArticulo);
+
+
+        }
+        // declaramos la arrays de producto
+        var listaProductos = [];
+        // declaración de array de precio
+        var listaPrecios = [];
+
+
+        // función 'enviar' ejecutará lo siguiente
+        function enviar() {
+			// recuperamos el valor de 'nombre'
+			var nombre = $('#nombre').val();
+            // recuperamos el valor de 'dirección'
+			var direccion = $('#direccion').val();
+            // recuperamos el valor de 'cantidad' y la transformamos de string a number
+			var cantidad = parseInt($('#cantidad').val());
+            // recuperamos el valor marcado de 'talla'
+			var talla = $('input[type=radio]:checked').val();
+            // recuperamos el valor de 'color'
+            var color = $('#color').val();
+            // aplicamos una variable de 'moneda' para que quede más claro el precio
+            var moneda = "€";
+            
+           
+
+
+			// validar nombre y apellido
+			if (nombre.trim()=='') {
+                // se borrarán las clases aplicadas a los siguientes 'id' (efecto similar a background-color: white)
+                $('#nombre, #direccion, #cantidad').removeAttr('class');
+                // alerta informando
+				alert('El nombre y apellidos es obligatorio');
+                // se resaltará aplicando una clase en el 'id'
+                $('#nombre').addClass('resaltar');
+                // y dejamos de ejecutar la función
+				return
+                // validar dirección
+			} else if (direccion.trim()=='') {
+                // se borrarán las clases aplicadas a los siguientes 'id' (efecto similar a background-color: white)
+                $('#nombre , #direccion, #cantidad').removeAttr('class');
+                // alerta informando
+                alert('La dirección es obligatoria');
+                // se resaltará aplicando una clase en el 'id'
+                $('#direccion').addClass('resaltar');
+                // y dejamos de ejecutar la función
+                return
+                // contemplamos la posibilidad de que el valor introducido sea 'nada' o '0'
+            } else if (cantidad=='' || cantidad<=0) {
+                // se borrarán las clases aplicadas a los siguientes 'id' (efecto similar a background-color: white)
+                $('#nombre , #direccion, #cantidad').removeAttr('class');
+                // alerta informando
+                alert('La cantidad mínima es 1. Por favor, revise de nuevo la cantidad introducida.');
+                // $('#cantidad').addClass('resaltar'); eliminado: en el examen no pide colorear el campo 'cantidad'
+                // y dejamos de ejecutar la función                
+                return
+            } else {
+                // si no cumple ninguna de las anteriores, es correcto y pasamos a eliminar la clase 'resaltar' de los 'id' seleccionados
+                $('#nombre , #direccion, #cantidad').removeAttr('class');
+            }
+            
+            // Condición de 'camiseta' plural o singular en el 'resumen'
+            if (cantidad == 1){
+                // si la cantidad es 1, será 'camiseta'
+                var producto = " camiseta";
+            }else{
+                // para el resto, será 'camisetas'
+                var producto = " camisetas";
+            }
+
+            // casos de color aplicando el precio correspondiente
+            switch (color) {
+                    // si el valor de 'color' es 'amarilla', aplicamos valor '12' al 'precio'
+                    case 'amarilla':
+                    var precio = 12;
+                        break;
+                        case 'naranja':
+                    var precio = 12;
+                        break;
+                        case 'roja':
+                    var precio = 12;
+                        break;
+                        case 'verde':
+                    var precio = 12;
+                        break;
+                        case 'azul':
+                    var precio = 12;
+                        break;
+                        case 'negra':
+                    var precio = 12;
+                        break;
+                    default:
+                    var precio = 10;
+                        break;
+                }
+            // variable total que recoge la operación de 'cantidad' multiplicado por 'precio'
+            var total = cantidad*precio
+            // variable con mensaje recogiendo variables y texto que aparecerán en el 'resumen'
+            var mensaje = nombre+" ha comprado "+cantidad+producto+" de color "+color+" y talla "+talla+". Precio total: "+total+moneda+". Dirección de envío: "+direccion
+            // aplicamos al 'id' 'resumen' el mensaje anteriormente declarado
+            $('#resumen').html(mensaje);
+        }
+
+        // función que muestra la foto de la camiseta del color seleccionado
+        function color() {
+            // recogemos el valor de la combo 'color' dentro de una variable
+			var color = $('#color').val();
+            
+				// casos en los que coincida el valor de 'color' con:
+                switch (color) {
+                    // si es amarillo
+                    case 'amarilla':
+                    // al 'id' 'camiseta' le modificamos el atributo 'src'
+                    $("#camiseta").attr("src", "img/camiseta_amarilla.png");
+                    // y aplicaremos el valor '12' a la camiseta de este color
+                    var precio = 12;
+                        break;
+                        case 'naranja':
+                    $("#camiseta").attr("src", "img/camiseta_naranja.png");
+                    var precio = 12;
+                        break;
+                        case 'roja':
+                    $("#camiseta").attr("src", "img/camiseta_roja.png");
+                    var precio = 12;
+                        break;
+                        case 'verde':
+                    $("#camiseta").attr("src", "img/camiseta_verde.png");
+                    var precio = 12;
+                        break;
+                        case 'azul':
+                    $("#camiseta").attr("src", "img/camiseta_azul.png");
+                    var precio = 12;
+                        break;
+                        case 'negra':
+                    $("#camiseta").attr("src", "img/camiseta_negra.png");
+                    var precio = 12;
+                        break;
+                    // el valor por defecto con el que comenzamos es la camiseta 'blanca'
+                    default:
+                    // modificamos el atributo 'src' del 'id' 'camiseta'
+                    $("#camiseta").attr("src", "img/camiseta_blanca.png");
+                    // aplicamos un valor a 'precio' de '10'
+                    var precio = 10;
+                        break;
+                }
+                // alert(color)
+                // alert(precio)
+
+                // retornamos el valor precio
+                return precio;    		
+		}
+
+        // alta del artículo
+        function altaArticulo(){
+            // recogemos el valor del 'id' 'artículo' dentro de una variable
+            var articulo = $('#articulo').val();
+            // recogemos el valor del 'id' 'precio' dentro de una variable
+            var precioarticulo = $('#precio').val();
+            // recogemos una variable para aplicarla posteriormente en la búsqueda de duplicados
+            var indice = listaProductos.indexOf(articulo);
+                
+            // si no se introduce un nombre
+                if (articulo.trim()=='') {
+                    // saltará la alerta informando
+                    alert('El artículo ha de tener un nombre');
+                // si no se introduce un precio correcto (deberá ser mayor que 0)
+                } else if (precioarticulo.trim()=='' || precioarticulo<=0) {
+                    // alerta informando
+                    alert('El precio ha de ser superior a 0€');
+                // si al artículo introducido no está en la lista del array
+                } else if(indice == -1) {
+                    // añadimos el nombre del artículo a la lista de artículos
+                    listaProductos.push(articulo);
+                    // añadimos el precio introducido a la lista de precios
+                    listaPrecios.push(precioarticulo);
+                    // mostramos en el 'id' 'lista' las variables que acabamos de añadir con esta cadena
+                    $('#lista').append('<tr><td>'+articulo+'</td><td>'+precioarticulo+'</td><td class="borrar"> X </td></tr>');
+
+                    // desactivamos listener para evitar que se solapen (si la función se ejecuta varias veces)
+                    $('td.borrar').off('click');
+                    // activamos listener que ejecutará la función 'eliminarArticulo' al pulsar sobre la X (elemento que se acaba de crear)
+                    $('td.borrar').on('click', eliminarArticulo);
+                    // borramos el contenido del input 'artículo'
+                    $('#articulo').val('');
+                    // borramos el contenido del input 'precio'
+                    $('#precio').val('');
+                    // situamos el cursor dentro del input 'articulo'
+                    $('#articulo').focus();
+                // si no se cumplen los anteriores, es que está duplicado
+                }  else {
+                    // alertamos del duplicado
+                    alert('El artículo ya existe');
+                    return;
+                }
+
+
+        }
+
+
+        // función borrar fila de la lista
+		function eliminarArticulo(){
+            // recogemos el valor de la posición del 'tr' más cercano al 'this', en este caso el 'this' es la X
+			var posicion = $(this).closest('tr').index()
+            // alert(posicion)
+			// borramos de la listaProductos, desde la posición seleccionada, un elemento
+			listaProductos.splice(posicion,1);
+            // borramos de la listaPrecios, desde la posición seleccionada, un elemento
+            listaPrecios.splice(posicion,1);
+            // también borramos la fila entera
+            $(this, "tr").parent().remove()
+		}
+
+        
+    
+
+        
+		
+    </script>
+</head>
+<body>
+    <div class='contenedor'>
+        <section>
+            <div class='info1'>
+                <form name='formulario'>
+                    <label>Nombre y apellidos</label>
+                    <input type='text' id='nombre'><br><br>
+                    <label>Dirección</label>
+                    <input type='text' id='direccion'><br><br>
+                    <label>Cantidad</label>
+                    <input type='number' id='cantidad' value='1' min='1'><br><br>
+                    <label>Seleccione talla:</label>
+                    XS<input type='radio' name='talla' checked value='XS'>
+                    S<input type='radio' name='talla' value='S'>
+                    M<input type='radio' name='talla' value='M'>
+                    L<input type='radio' name='talla' value='L'>
+                    XL<input type='radio' name='talla' value='XL'><br><br> 
+                    <label>Seleccione color:</label>
+                    <select id='color'>
+                        <option value="blanca">blanca</option>
+                        <option value="amarilla">amarilla</option>
+                        <option value="naranja">naranja</option>
+                        <option value="roja">roja</option>
+                        <option value="verde">verde</option>
+                        <option value="azul">azul</option>
+                        <option value="negra">negra</option>
+                    </select><br><br> 
+                    <input type='button' id='enviar' value='Enviar'><br><br>
+                    <div id='resumen'></div>
+                </form>
+            </div>
+            <div class='info2'>   
+                <img id='camiseta' src='img/camiseta_blanca.png'>
+            </div>
+        </section>
+        <section>
+            <form>
+            	<label>Artículo</label>
+            	<input type='text' id='articulo' required>
+            	<label>Precio</label>
+            	<input type='number' id='precio' required min='0'>
+            	<input type='button' id='alta' value='Alta artículo'>
+            </form><br><br>
+            <div>
+            	<table id='lista'></table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
