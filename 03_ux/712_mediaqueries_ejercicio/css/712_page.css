@@ -1,0 +1,103 @@
+		
+		div.wraper {
+			background-color: #e4f3f8;
+			width: 90%;
+			max-width:980px;
+			margin: auto;
+			text-align: center;
+			box-sizing: border-box;
+		}
+		header {			
+			height: auto;
+			
+			border: 3px ridge cyan;
+			box-sizing: border-box;	
+		}
+		header img {
+			width: 100%;
+		}
+		
+		nav {
+			background-color: cyan;			
+			height: 27px; 
+			padding: 0px 5px 0px 5px;
+			box-sizing: border-box;	
+			text-align: left;
+			margin: 10px auto auto auto;
+		}
+		nav ul {
+			list-style: none;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0px;
+		}
+		nav li {
+			display: inline-block;
+			color: #0087b4;
+			padding: 0px;
+			margin: 0px;
+		} 
+		nav a {
+			color: #024071;
+			background-color: transparent;
+			line-height: 25px;
+			font-weight: bold;
+			vertical-align: top;
+			text-align: center;
+			padding: 0px 5px 0px 5px;
+			margin: 0px;
+			display: block;
+			text-decoration: none;
+		}
+		nav a:hover {
+			background: -moz-linear-gradient(left, #fec540 0%, #fff96d 100%); 
+			background: -webkit-linear-gradient(left, #fec540 0%, #fff96d 100%);
+			background: -o-linear-gradient(left, #fec540 0%, #fff96d 100%);
+			background: -ms-linear-gradient(left, #fec540 0%, #fff96d 100%);
+			background: linear-gradient(left, #fec540 0%, #fff96d 100%); 
+		}
+		
+		section {
+			background-color: white;
+			color: black;			
+			padding: 0px 0px 10px 0px;
+			box-sizing: border-box;	
+			text-align: center;
+			margin: 10px auto auto auto;
+			border: 3px ridge cyan;
+		}
+		
+		
+		div.sections {
+			box-sizing: border-box;
+			margin: auto;
+			padding: 20px;
+			text-align: center;
+			vertical-align: top;
+			background-color: white; 
+		}
+		div.introduccion {
+			box-sizing: border-box;
+			margin: auto;
+			padding: 20px 40px 0px 40px;
+			text-align: justify;
+			background-color: white; 
+		}
+		
+		article {
+			display: inline-block;
+			box-sizing: border-box;
+			width: 45%;
+			height: 200px;
+			margin: 10px 10px 10px 10px;
+			padding: 10px;
+			text-align: justify;
+			background-color: white;
+			border: 3px ridge #004b84;
+		}
+
+		img {
+			/* float: left; */
+			margin: auto;
+		}
+		
