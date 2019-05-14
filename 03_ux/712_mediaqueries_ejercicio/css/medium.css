@@ -1,0 +1,11 @@
+header {
+    height: auto;
+}
+
+article {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 20px;
+}
