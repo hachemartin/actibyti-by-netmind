@@ -1,0 +1,43 @@
+header {
+    height: auto;
+}
+nav {
+    display: block;
+	height: auto; 
+	text-align: center;
+    padding: 5px;
+}
+nav ul {
+    padding: 0px;
+}
+
+nav li {
+    display: block;
+    color: #0087b4;
+    padding: 0px;
+    margin: 1px 0px 2px 0px;
+} 
+
+nav a {
+    color: #024071;
+    border: 1px solid #024071;
+    border-radius: 25px;
+    width: 250px;
+    padding: 2px;
+    margin-bottom: 3px;
+
+}
+
+article {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+img {
+    float: none;
+    width: 100%;
+}
