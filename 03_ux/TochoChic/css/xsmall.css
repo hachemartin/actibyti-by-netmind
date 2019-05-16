@@ -1,0 +1,31 @@
+.contenido {
+    display: block;
+}
+header h1 {
+    width: 80%;
+    font-size: 40px;
+}
+section {
+    display: block;
+	width: 100%;
+
+}
+article {
+    width: 100%;
+    display: block;
+    margin: 0px;
+    margin-bottom: 5px;
+
+}
+.images, .texts{
+    display: block;
+    /* width: calc(50% - 5px); */
+}
+
+aside {
+    width: 100%;
+    border-left: none;
+}
+
+/* si no se pone 'rango' min-max en en link css:
+se podrá heredar estilos y nos ahorra mucho código */
