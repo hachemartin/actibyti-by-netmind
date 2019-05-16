@@ -1,0 +1,45 @@
+.contenido {
+    display: block;
+}
+header h1 {
+    width: 80%;
+}
+section {
+    display: block;
+	width: 100%;
+
+}
+article {
+    width: 100%;
+    display: flex;
+    margin: 0px;
+
+}
+/* article .images {
+    width: 50%;
+}
+
+article .texts {
+    width: 50%;
+} */
+
+.images, .texts{
+
+    width: calc(50%);
+    /* vertical-align: top; con flex no hace falta */
+}
+.images {
+    order: 2;
+}
+.text {
+    order: 1;
+}
+aside {
+    width: 100%;
+    border-left: none;
+}
+.promo {
+    left:auto;
+    right: -70px;
+    transform: rotate(45deg);
+}
