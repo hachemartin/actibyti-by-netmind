@@ -1,0 +1,7 @@
+header h1 {
+    width: 55%;
+}
+
+article {
+    width: calc(50% - 15px);
+}
