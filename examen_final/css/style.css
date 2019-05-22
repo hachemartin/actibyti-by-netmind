@@ -1,0 +1,199 @@
+/* Cabecera con:
+- ancho 100% de la página
+- alto 60px
+- color de fondo 022F7C, un ttulo con tpograaa
+‘serif’ y un borde inferior de 6px en color negro
+El texto de la cabecera aparecerá centrado vertcalmente */
+
+#cabecera{
+    width: 100%; 
+    height: 60px; 
+    background-color: #022F7C;
+    border-bottom: 6px black solid;
+    position: absolute;    
+    left: 0;
+    top: 0;
+}
+
+
+header{
+    position: relative;
+    width: 100%;
+    height: 60px; 
+    color: white;
+    font-size: 24px;
+    padding-top: 5px;
+    /* aquí nos pide tipografía con serif*/
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* body:
+- imagen de fondo que no se repita
+
+
+*/
+
+body{
+    background-color: #F9F1CF; /* aplicamos un fondo de color similar al de la section */
+    overflow-x: hidden;
+
+}
+/* fuente arial a menos que se pida lo contrario */
+* {
+    font-family: Arial;
+}
+
+
+/* barra de navegación:
+- ancho del 100%
+- ancho adaptable al contenido 'height: auto'
+
+
+*/
+nav{
+    height: auto;
+    min-width: 1000px;
+    background: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 25px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0px; /* margen interior en los elementos que contiene */
+    position: absolute;
+    left: 0px;
+    top: 65px;
+}
+
+ul{
+    padding:0;
+
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+nav li{
+    list-style: none;
+    text-align:center;
+    padding: 5px 90px;
+}
+
+.navtexto {
+    margin-top: 10px;
+}
+
+/* enlaces: quitar subrayado inferior */
+a{
+    text-decoration: none; 
+    color: orange;
+    font-size: 25px;
+}
+/* enlaces: el enlace cambia de color al situar el cursor encima */
+a:hover{
+    color:white;
+}
+/* clase con negrita */
+.bold {
+    font-weight: bold;
+}
+
+
+
+section{
+    margin: auto;
+    display: inline-block;
+    margin-bottom: 45px;
+    position: relative;
+
+
+}
+#contenedor{
+    background-color: #F9F1CF;
+    padding-top: 40px;
+    left: 0px;
+    text-align: center;
+
+    
+}
+
+#centrotitular{
+    font-size:18px;
+    text-align: center;
+    margin: 200px 0px 50px;
+}
+.caja{
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+article {
+
+   width: 240px;
+   border: 1px gainsboro solid;
+   border-radius: 3px;
+   background-color: white;
+   text-align: center;
+   padding: 5px 5px 22px 5px;
+   box-shadow: 0px 0px 4px black;
+   
+   
+}		
+#cuadro2{
+    margin:0 112px 0 112px;
+}
+#chincheta{
+    position:absolute;
+    left:227px;
+    top:-49px;
+}
+h3 {
+    font-size: 15px;
+}
+
+#foto1{
+    transform: rotate(-3deg);
+    /* browser support: mozilla, safari, chrome, internet explorer, opera */
+    -moz-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);			
+}
+#foto2{
+    transform: rotate(2deg);
+    /* browser support: mozilla, safari, chrome, internet explorer, opera */
+    -moz-transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);	
+    -o-transform: rotate(2deg);	
+}
+#foto3{
+    transform: rotate(-1deg);
+    /* browser support: mozilla, safari, chrome, internet explorer, opera */
+    -moz-transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);			
+}
+
+
+#barrainferior{
+   width: 100%;
+   height: 50px; /* delimitamos el tamaño del ancho y el color de fondo */
+   background-color: #022F7C;
+   border-top: 6px black solid;   
+   left: 0px;
+   position: absolute;
+}
+
+footer{
+    position: relative;
+    width: 100%; 
+    color: white;
+    padding-top: 12px;
+    font-size: 13px;
+    margin:0 auto;
+
+}
